@@ -3,65 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Pipiris Fries — Menú</title>
-
-<script>
-(function(){
-  try {
-    var t = localStorage.getItem('theme') || 'light';
-    if (t !== 'dark') t = 'light';
-    document.documentElement.setAttribute('data-theme', t);
-  } catch(e) {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-})();
-</script>
+<title>Pipiris Fries — Papas Sin Igual</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  /* Slush palette */
-  --carbon: #000000;
-  --paper: #ffffff;
-  --sky: #dceeff;
-  --gray: #cccccc;
-  --mist: #e9e9e9;
-  --blue: #4da2ff;
-  --mint: #55db9c;
-  --lavender: #e9ccff;
-  --ember: #fb4903;
-  --sunburst: #ffd731;
-  --violet: #5c4ade;
+  /* Pipiris palette */
+  --black: #0d0d0d;
+  --black-soft: #1a1a1a;
+  --yellow: #FFD400;
+  --yellow-deep: #F4B400;
+  --yellow-light: #FFE566;
+  --red: #E63946;
+  --red-deep: #C42430;
+  --orange: #FF8C00;
+  --cream: #FFF6DB;
+  --cream-warm: #FFEFC2;
+  --white: #FFFFFF;
+  --gray-line: #2b2b2b;
 
-  --border-w: 1.5px;
-  --border: var(--border-w) solid var(--carbon);
-  --border-thin: 1px solid var(--carbon);
-
-  --radius-card: 24px;
-  --radius-card-lg: 40px;
-  --radius-sm: 16px;
-  --radius-pill: 999px;
-
-  --font-display: 'Anton', 'Arial Narrow', sans-serif;
+  --font-display: 'Titan One', 'Anton', system-ui, sans-serif;
+  --font-script: 'Caveat', cursive;
   --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
 
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+  --border-w: 2.5px;
+  --border: var(--border-w) solid var(--black);
+  --shadow-offset: 5px 5px 0 var(--black);
+  --shadow-offset-sm: 3px 3px 0 var(--black);
   --page-max: 1440px;
-  --section-gap: 48px;
-}
-
-/* DARK theme (inverted paper) */
-:root[data-theme="dark"] {
-  --carbon: #ffffff;
-  --paper: #141414;
-  --sky: #0f1a2a;
-  --gray: #1e1e1e;
-  --mist: #2a2a2a;
-  --border: var(--border-w) solid var(--carbon);
-  --border-thin: 1px solid var(--carbon);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -71,63 +48,77 @@ body {
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 15px;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-  color: var(--carbon);
-  background: var(--paper);
+  line-height: 1.5;
+  color: var(--black);
+  background: var(--cream);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing: -0.01em; }
-::selection { background: var(--blue); color: #fff; }
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+::selection { background: var(--yellow); color: var(--black); }
 
-::-webkit-scrollbar { width: 12px; height: 12px; }
-::-webkit-scrollbar-track { background: var(--paper); }
-::-webkit-scrollbar-thumb { background: var(--carbon); border-radius: var(--radius-pill); border: 3px solid var(--paper); }
+::-webkit-scrollbar { width: 14px; height: 14px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--black); border-radius: var(--radius-pill); border: 3px solid var(--cream); }
 
 .container { max-width: var(--page-max); margin: 0 auto; padding: 0 24px; }
 
 /* ============================================
-   MARQUEE (black band top)
+   HONEY DRIP DECORATION
+   ============================================ */
+.drip-edge {
+  height: 32px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40' preserveAspectRatio='none'><path d='M0,0 L400,0 L400,18 C390,18 385,32 375,32 C365,32 360,15 350,15 C340,15 335,28 325,28 C315,28 310,12 300,12 C290,12 285,30 275,30 C265,30 260,14 250,14 C240,14 235,34 225,34 C215,34 210,16 200,16 C190,16 185,30 175,30 C165,30 160,13 150,13 C140,13 135,28 125,28 C115,28 110,12 100,12 C90,12 85,32 75,32 C65,32 60,16 50,16 C40,16 35,30 25,30 C15,30 10,14 0,14 Z' fill='%23FFD400'/></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-bottom: -1px;
+}
+.drip-edge.on-black { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40' preserveAspectRatio='none'><path d='M0,0 L400,0 L400,18 C390,18 385,32 375,32 C365,32 360,15 350,15 C340,15 335,28 325,28 C315,28 310,12 300,12 C290,12 285,30 275,30 C265,30 260,14 250,14 C240,14 235,34 225,34 C215,34 210,16 200,16 C190,16 185,30 175,30 C165,30 160,13 150,13 C140,13 135,28 125,28 C115,28 110,12 100,12 C90,12 85,32 75,32 C65,32 60,16 50,16 C40,16 35,30 25,30 C15,30 10,14 0,14 Z' fill='%23FFD400'/></svg>"); }
+
+/* ============================================
+   MARQUEE
    ============================================ */
 .marquee {
   overflow: hidden;
-  background: var(--carbon);
-  color: var(--paper);
-  padding: 12px 0;
-  border-bottom: var(--border);
+  background: var(--black);
+  color: var(--yellow);
+  padding: 14px 0;
+  border-bottom: 3px solid var(--yellow);
 }
 .marquee-track {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
   width: max-content;
-  animation: marqueeScroll 40s linear infinite;
+  animation: marquee 40s linear infinite;
   white-space: nowrap;
 }
 .marquee-track span {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.16em;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-.marquee-track i { font-size: 10px; }
-@keyframes marqueeScroll {
+.marquee-track i { color: var(--red); }
+@keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
 /* ============================================
-   HEADER (pill nav)
+   HEADER
    ============================================ */
 .site-header {
-  background: var(--paper);
-  border-bottom: var(--border);
-  padding: 14px 0;
+  background: var(--black);
+  border-bottom: 3px solid var(--yellow);
+  padding: 16px 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -141,259 +132,285 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   min-width: 0;
+  text-decoration: none;
 }
 .brand-logo {
-  width: 52px; height: 52px;
+  width: 60px; height: 60px;
   border-radius: var(--radius-pill);
-  border: var(--border);
-  background: var(--sunburst);
+  border: 3px solid var(--yellow);
+  background: var(--yellow);
   object-fit: cover;
   flex-shrink: 0;
+  box-shadow: 0 0 0 3px var(--black);
 }
 .brand-name {
   font-family: var(--font-display);
-  font-size: 26px;
-  line-height: 0.9;
-  letter-spacing: 0.01em;
+  font-size: 28px;
+  line-height: 0.92;
+  color: var(--yellow);
   text-transform: uppercase;
-  color: var(--carbon);
+  -webkit-text-stroke: 1.5px var(--black);
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 var(--red);
   white-space: nowrap;
+}
+.brand-name .sub {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 18px;
+  color: var(--white);
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  font-weight: 700;
+  margin-top: -4px;
+  letter-spacing: 0;
 }
 .pill-nav {
   display: flex;
-  gap: 8px;
+  gap: 10px;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  flex: 1;
 }
 .pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 18px;
-  background: var(--paper);
-  color: var(--carbon);
+  padding: 11px 20px;
+  background: var(--yellow);
+  color: var(--black);
   border: var(--border);
   border-radius: var(--radius-pill);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 12px;
+  font-family: var(--font-display);
+  font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-decoration: none;
   cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
+  text-decoration: none;
+  box-shadow: var(--shadow-offset-sm);
+  transition: transform 0.12s, box-shadow 0.12s;
 }
-.pill:hover { transform: translateY(-1px); background: var(--sunburst); }
-.pill.blue { background: var(--blue); }
-.pill.mint { background: var(--mint); }
-.pill.lav { background: var(--lavender); }
-.pill.violet { background: var(--violet); color: #fff; }
-.pill.ember { background: var(--ember); color: #fff; }
-.pill.black { background: var(--carbon); color: var(--paper); }
-.pill.icon-only { padding: 10px; width: 42px; height: 42px; justify-content: center; }
+.pill:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--black); }
+.pill.red { background: var(--red); color: var(--white); }
+.pill.white { background: var(--white); }
+.pill.icon-only { padding: 11px; width: 44px; height: 44px; justify-content: center; }
 
 /* ============================================
-   HERO (sky wash band with huge display)
+   HERO
    ============================================ */
 .hero {
-  background: var(--sky);
-  padding: 60px 0 80px;
+  background: var(--black);
+  padding: 60px 0 40px;
   position: relative;
   overflow: hidden;
-  border-bottom: var(--border);
-}
-.hero-display {
-  position: relative;
   text-align: center;
-  z-index: 2;
 }
-.display-text {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(72px, 15vw, 200px);
-  line-height: 0.78;
-  letter-spacing: -0.005em;
-  text-transform: uppercase;
-  color: var(--carbon);
-  display: block;
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,212,0,0.10) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(230,57,70,0.10) 0%, transparent 40%);
+  pointer-events: none;
 }
-.display-text.mid { color: var(--ember); -webkit-text-stroke: 2px var(--carbon); }
-.hero-tagline {
-  font-family: var(--font-body);
+.hero-inner { position: relative; z-index: 2; }
+
+.hero-logo-img {
+  max-width: 90%;
+  width: 560px;
+  height: auto;
+  display: inline-block;
+  filter: drop-shadow(0 8px 0 rgba(0,0,0,0.4));
+  margin-bottom: 12px;
+}
+.hero-script {
+  font-family: var(--font-script);
   font-weight: 700;
-  font-size: 20px;
-  letter-spacing: -0.01em;
-  color: var(--carbon);
-  margin-top: 20px;
-  text-align: center;
+  font-size: clamp(28px, 4vw, 52px);
+  color: var(--yellow);
+  line-height: 1;
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 0 var(--black), 0 0 12px rgba(255,212,0,0.5);
 }
-.hero-tagline span {
-  background: var(--sunburst);
+.hero-tagline-badges {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--yellow);
+  color: var(--black);
   border: var(--border);
   border-radius: var(--radius-pill);
-  padding: 6px 16px;
-  display: inline-block;
-  margin: 0 4px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-offset-sm);
 }
-.hero-tagline span.blue { background: var(--blue); }
-.hero-tagline span.mint { background: var(--mint); }
-.hero-tagline span.lav { background: var(--lavender); }
-.hero-tagline span.violet { background: var(--violet); color: #fff; }
-.hero-tagline span.ember { background: var(--ember); color: #fff; }
+.hero-badge.red { background: var(--red); color: var(--white); }
+.hero-badge.white { background: var(--white); }
+.hero-badge i { font-size: 13px; }
 
-/* Stickers scattered in hero */
-.sticker {
+/* Character sticker (the yellow french fry guy) */
+.hero-character {
   position: absolute;
-  border: var(--border);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--carbon);
+  bottom: -10px;
   z-index: 3;
-  box-shadow: none;
+  filter: drop-shadow(6px 6px 0 rgba(0,0,0,0.5));
+  pointer-events: none;
 }
-.sticker.circle { border-radius: var(--radius-pill); }
-.sticker.wallet { border-radius: 18px; }
-.sticker img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
-
-.sticker.s1 { width: 72px; height: 72px; background: var(--mint); top: 18%; left: 8%; transform: rotate(-12deg); }
-.sticker.s2 { width: 82px; height: 82px; background: var(--sunburst); top: 22%; right: 10%; transform: rotate(14deg); }
-.sticker.s3 { width: 66px; height: 66px; background: var(--violet); color: #fff; bottom: 22%; left: 14%; transform: rotate(8deg); }
-.sticker.s4 { width: 74px; height: 74px; background: var(--ember); color: #fff; bottom: 18%; right: 12%; transform: rotate(-9deg); }
-.sticker.s5 { width: 58px; height: 58px; background: var(--lavender); top: 52%; left: 4%; transform: rotate(22deg); }
-.sticker.s6 { width: 62px; height: 62px; background: var(--blue); top: 58%; right: 6%; transform: rotate(-15deg); }
+.hero-character img { width: 100%; height: auto; display: block; }
+.hero-character.left { left: 2%; width: 130px; transform: rotate(-8deg); }
+.hero-character.right { right: 2%; width: 120px; transform: rotate(8deg) scaleX(-1); }
 
 @media (max-width: 768px) {
-  .sticker.s1 { width: 48px; height: 48px; font-size: 18px; top: 14%; left: 4%; }
-  .sticker.s2 { width: 54px; height: 54px; font-size: 20px; top: 18%; right: 5%; }
-  .sticker.s3 { width: 44px; height: 44px; font-size: 16px; bottom: 26%; left: 8%; }
-  .sticker.s4 { width: 48px; height: 48px; font-size: 18px; bottom: 22%; right: 6%; }
-  .sticker.s5, .sticker.s6 { display: none; }
+  .hero-character.left { width: 80px; }
+  .hero-character.right { width: 76px; }
 }
 
 /* ============================================
-   INFO BAND
+   BANDS
    ============================================ */
-.band-white { background: var(--paper); padding: 40px 0; border-bottom: var(--border); }
-.band-gray { background: var(--gray); padding: 40px 0; border-bottom: var(--border); }
-.band-sky { background: var(--sky); padding: 40px 0; border-bottom: var(--border); }
-.band-lav { background: var(--lavender); padding: 40px 0; border-bottom: var(--border); }
+.band-yellow {
+  background: var(--yellow);
+  padding: 44px 0;
+  position: relative;
+}
+.band-black {
+  background: var(--black);
+  padding: 44px 0;
+  color: var(--yellow);
+}
+.band-cream {
+  background: var(--cream);
+  padding: 44px 0;
+}
 
+/* ============================================
+   INFO CARD
+   ============================================ */
 .info-card {
-  background: var(--paper);
+  background: var(--white);
   border: var(--border);
-  border-radius: var(--radius-card);
-  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
   max-width: 1000px;
   margin: 0 auto;
+  box-shadow: var(--shadow-offset);
+  position: relative;
 }
 .info-card h3 {
   font-family: var(--font-display);
-  font-size: 28px;
-  line-height: 0.95;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
+  font-size: 32px;
+  color: var(--black);
   margin-bottom: 14px;
-  color: var(--carbon);
+  text-transform: uppercase;
+  line-height: 0.95;
 }
+.info-card h3 .accent { color: var(--red); }
 .info-card p {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 500;
-  color: var(--carbon);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   line-height: 1.5;
 }
-.info-card p strong { font-weight: 700; }
+.info-card p strong { font-weight: 800; }
+.info-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .info-badge {
-  display: inline-block;
-  background: var(--mint);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
   border: var(--border);
   border-radius: var(--radius-pill);
-  padding: 6px 14px;
-  font-weight: 700;
+  font-family: var(--font-body);
   font-size: 12px;
-  letter-spacing: 0.06em;
+  font-weight: 700;
   text-transform: uppercase;
-  margin-top: 12px;
-  margin-right: 8px;
+  letter-spacing: 0.04em;
+  background: var(--yellow);
+  color: var(--black);
+  box-shadow: 2px 2px 0 var(--black);
 }
-.info-badge.blue { background: var(--blue); }
-.info-badge.lav { background: var(--lavender); }
-.info-badge.sun { background: var(--sunburst); }
-.info-badge.ember { background: var(--ember); color: #fff; }
-.info-badge.violet { background: var(--violet); color: #fff; }
+.info-badge.red { background: var(--red); color: var(--white); }
+.info-badge.white { background: var(--white); }
+.info-badge.orange { background: var(--orange); color: var(--black); }
 
 /* ============================================
    SCHEDULE BANNER
    ============================================ */
 .schedule-banner {
   max-width: 1000px;
-  margin: 0 auto 24px;
-  padding: 16px 20px;
-  border-radius: var(--radius-card);
+  margin: 22px auto 0;
+  padding: 18px 22px;
   border: var(--border);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   gap: 16px;
-  font-family: var(--font-body);
-  background: var(--paper);
-  transition: background 0.3s;
+  background: var(--white);
+  box-shadow: var(--shadow-offset-sm);
 }
 .schedule-banner .banner-icon {
-  width: 48px; height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-pill);
   border: var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 20px;
   flex-shrink: 0;
-  background: var(--sky);
+  background: var(--yellow);
 }
 .schedule-banner .banner-text { flex: 1; min-width: 0; }
 .schedule-banner .banner-text strong {
   display: block;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 14px;
+  font-family: var(--font-display);
+  font-size: 18px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   margin-bottom: 4px;
-  color: var(--carbon);
+  color: var(--black);
 }
 .schedule-banner .banner-text small {
   display: block;
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.5;
-  color: var(--carbon);
-  opacity: 0.85;
+  color: var(--black);
+  opacity: 0.8;
 }
-.schedule-banner.open .banner-icon { background: var(--mint); }
-.schedule-banner.closed .banner-icon { background: var(--gray); }
-.schedule-banner.limited .banner-icon { background: var(--sunburst); }
+.schedule-banner.open .banner-icon { background: var(--yellow); }
+.schedule-banner.closed .banner-icon { background: var(--red); color: var(--white); }
+.schedule-banner.limited .banner-icon { background: var(--orange); }
 
 /* ============================================
-   MAIN LAYOUT (menu + cart)
+   MAIN LAYOUT
    ============================================ */
 .main-layout {
   display: grid;
   grid-template-columns: 1fr 400px;
-  gap: 24px;
+  gap: 28px;
   padding: 40px 0;
 }
 
 .panel {
-  background: var(--paper);
+  background: var(--white);
   border: var(--border);
-  border-radius: var(--radius-card);
-  padding: 24px;
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-offset);
 }
 
 .section-title {
@@ -402,36 +419,35 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   padding-bottom: 14px;
   border-bottom: var(--border);
   font-family: var(--font-display);
-  font-size: 26px;
-  line-height: 0.95;
+  font-size: 30px;
+  color: var(--black);
   text-transform: uppercase;
-  letter-spacing: 0.01em;
-  color: var(--carbon);
+  line-height: 1;
 }
 .section-title .clear-cart-btn {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 14px;
-  background: var(--ember);
-  color: #fff;
+  padding: 9px 16px;
+  background: var(--red);
+  color: var(--white);
   border: var(--border);
   border-radius: var(--radius-pill);
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
+  box-shadow: var(--shadow-offset-sm);
 }
-.section-title .clear-cart-btn:hover { transform: translateY(-1px); }
+.section-title .clear-cart-btn:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--black); }
 
 /* ============================================
-   CATEGORY PILLS
+   CATEGORY BUTTONS
    ============================================ */
 .menu-categories {
   display: flex;
@@ -440,22 +456,22 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
   margin-bottom: 22px;
 }
 .category-btn {
-  padding: 10px 18px;
-  background: var(--paper);
+  padding: 11px 18px;
+  background: var(--white);
   border: var(--border);
   border-radius: var(--radius-pill);
   cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--carbon);
-  transition: transform 0.15s ease, background 0.15s ease;
+  color: var(--black);
+  box-shadow: var(--shadow-offset-sm);
+  transition: transform 0.12s, box-shadow 0.12s;
   white-space: nowrap;
 }
-.category-btn:hover { transform: translateY(-1px); background: var(--sunburst); }
-.category-btn.active { background: var(--carbon); color: var(--paper); }
+.category-btn:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--black); }
+.category-btn.active { background: var(--black); color: var(--yellow); }
 
 /* ============================================
    PRODUCTS GRID
@@ -463,21 +479,21 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  gap: 20px;
 }
 .product-card {
-  background: var(--paper);
+  background: var(--cream);
   border: var(--border);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
   cursor: pointer;
   position: relative;
-  transition: transform 0.15s ease;
+  box-shadow: var(--shadow-offset-sm);
+  transition: transform 0.15s, box-shadow 0.15s;
 }
-.product-card:hover { transform: translateY(-3px); }
+.product-card:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--black); }
 
 .product-img {
   height: 160px;
@@ -485,27 +501,28 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
   object-fit: cover;
   display: block;
   border-bottom: var(--border);
-  background: var(--mist);
+  background: var(--yellow-light);
 }
 .product-info {
-  padding: 14px;
+  padding: 14px 16px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 .product-title {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: 6px;
-  color: var(--carbon);
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  color: var(--black);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 .product-desc {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
-  color: var(--carbon);
+  color: var(--black);
   opacity: 0.75;
   line-height: 1.45;
   margin-bottom: 12px;
@@ -518,14 +535,15 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
   gap: 8px;
   margin-top: auto;
   padding-top: 12px;
-  border-top: var(--border);
+  border-top: 2px dashed var(--black);
 }
 .product-price {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1;
-  color: var(--carbon);
-  letter-spacing: 0.01em;
+  color: var(--red);
+  -webkit-text-stroke: 1px var(--black);
+  paint-order: stroke fill;
   white-space: nowrap;
 }
 
@@ -533,13 +551,12 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
   position: absolute;
   top: 10px;
   right: 10px;
-  background: var(--violet);
-  color: #fff;
-  border: var(--border);
+  background: var(--red);
+  color: var(--white);
+  border: 2px solid var(--black);
   border-radius: var(--radius-pill);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 10px;
-  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 5px 10px;
@@ -547,6 +564,7 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
   align-items: center;
   gap: 4px;
   z-index: 2;
+  box-shadow: 2px 2px 0 var(--black);
 }
 
 /* ============================================
@@ -559,38 +577,38 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
   flex-shrink: 0;
 }
 .quantity-btn {
-  width: 32px; height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-pill);
-  background: var(--paper);
+  background: var(--white);
   border: var(--border);
-  color: var(--carbon);
+  color: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
+  box-shadow: 2px 2px 0 var(--black);
 }
-.quantity-btn:hover:not(:disabled) { background: var(--sunburst); }
-.quantity-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.quantity-btn:hover:not(:disabled) { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); background: var(--yellow); }
+.quantity-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .quantity-display {
   min-width: 26px;
   text-align: center;
-  font-weight: 700;
-  font-size: 15px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
+  font-size: 18px;
 }
 .add-to-cart {
-  background: var(--carbon);
-  color: var(--paper);
+  background: var(--yellow);
+  color: var(--black);
   border: var(--border);
   border-radius: var(--radius-pill);
-  padding: 9px 14px;
+  padding: 10px 14px;
   cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -598,60 +616,61 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
   flex: 1;
   justify-content: center;
   white-space: nowrap;
+  box-shadow: 2px 2px 0 var(--black);
 }
-.add-to-cart:hover { background: var(--blue); color: #fff; }
-.add-to-cart.in-cart { background: var(--mint); }
+.add-to-cart:hover { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); }
+.add-to-cart.in-cart { background: var(--red); color: var(--white); }
 
 /* ============================================
    CART
    ============================================ */
-.cart-section { position: sticky; top: 90px; height: fit-content; }
+.cart-section { position: sticky; top: 100px; height: fit-content; }
 .cart-items {
   max-height: 320px;
   overflow-y: auto;
   margin-bottom: 16px;
-  padding-right: 4px;
+  padding-right: 6px;
 }
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 12px 0;
-  border-bottom: var(--border);
+  padding: 14px 0;
+  border-bottom: 2px dashed var(--black);
   gap: 10px;
 }
 .cart-item:last-child { border-bottom: none; }
 .cart-item h4 {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.3;
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.15;
   margin-bottom: 4px;
-  color: var(--carbon);
+  color: var(--black);
+  text-transform: uppercase;
 }
 .cart-item small {
   font-family: var(--font-body);
   font-size: 11px;
-  color: var(--carbon);
-  opacity: 0.7;
+  color: var(--black);
+  opacity: 0.75;
+  font-weight: 500;
 }
 .cart-item-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .cart-item-qty {
   width: 48px;
   text-align: center;
-  padding: 6px 4px;
+  padding: 7px 4px;
   border: var(--border);
   border-radius: var(--radius-pill);
-  background: var(--paper);
-  color: var(--carbon);
-  font-size: 13px;
-  font-family: var(--font-body);
-  font-weight: 700;
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 14px;
+  font-family: var(--font-display);
 }
 .remove-item {
-  background: var(--ember);
-  color: #fff;
-  width: 30px; height: 30px;
+  background: var(--red);
+  color: var(--white);
+  width: 32px; height: 32px;
   border-radius: var(--radius-pill);
   border: var(--border);
   cursor: pointer;
@@ -659,24 +678,15 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
   align-items: center;
   justify-content: center;
   font-size: 11px;
+  box-shadow: 2px 2px 0 var(--black);
 }
-.remove-item:hover { transform: translateY(-1px); }
+.remove-item:hover { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); }
 
-.cart-empty {
-  text-align: center;
-  padding: 34px 15px;
-  color: var(--carbon);
-}
-.cart-empty i {
-  font-size: 26px;
-  margin-bottom: 12px;
-  display: block;
-  opacity: 0.6;
-}
+.cart-empty { text-align: center; padding: 36px 15px; }
+.cart-empty i { font-size: 32px; margin-bottom: 12px; display: block; color: var(--black); opacity: 0.35; }
 .cart-empty p {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -685,48 +695,50 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
    CART SUMMARY
    ============================================ */
 .cart-summary {
-  background: var(--sky);
+  background: var(--yellow);
   border: var(--border);
-  padding: 16px;
-  border-radius: var(--radius-sm);
+  padding: 18px;
+  border-radius: var(--radius-md);
   margin-bottom: 16px;
+  box-shadow: var(--shadow-offset-sm);
 }
 .cart-summary-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
   font-family: var(--font-body);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--carbon);
+  color: var(--black);
 }
 .cart-summary-row.total {
   font-size: 16px;
-  border-top: var(--border);
+  border-top: 2px dashed var(--black);
   padding-top: 10px;
   margin-top: 10px;
 }
 .cart-summary-row.total span:last-child {
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 28px;
   line-height: 1;
-  letter-spacing: 0.01em;
+  color: var(--red);
+  -webkit-text-stroke: 1px var(--black);
+  paint-order: stroke fill;
 }
 
 /* ============================================
-   DELIVERY / PACKAGING OPTIONS
+   PILL OPTIONS
    ============================================ */
-.option-group { margin-bottom: 12px; }
+.option-group { margin-bottom: 14px; }
 .option-group-label {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--carbon);
-  opacity: 0.7;
+  color: var(--black);
+  opacity: 0.75;
   display: block;
   margin-bottom: 8px;
 }
@@ -734,72 +746,76 @@ h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 700; letter-spacing
 
 .pill-option {
   flex: 1;
-  min-width: 120px;
+  min-width: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 14px;
-  background: var(--paper);
+  padding: 13px 14px;
+  background: var(--white);
   border: var(--border);
   border-radius: var(--radius-pill);
   cursor: pointer;
-  font-family: var(--font-body);
-  font-weight: 700;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--carbon);
-  transition: transform 0.15s, background 0.15s;
+  color: var(--black);
+  transition: transform 0.12s, box-shadow 0.12s;
   text-align: center;
+  box-shadow: 2px 2px 0 var(--black);
 }
-.pill-option:hover { transform: translateY(-1px); }
-.pill-option.selected { background: var(--mint); }
-.pill-option.selected.alt { background: var(--sunburst); }
-.pill-option input[type="radio"] { display: none; }
+.pill-option:hover { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); }
+.pill-option.selected { background: var(--yellow); }
+.pill-option.selected.alt { background: var(--red); color: var(--white); }
+.pill-option input { display: none; }
 .pill-option i { font-size: 13px; }
 
 /* ============================================
    FORM CONTROLS
    ============================================ */
-.form-group { margin-bottom: 16px; }
+.form-group { margin-bottom: 18px; }
 .form-group > label {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--carbon);
-  opacity: 0.7;
+  letter-spacing: 0.08em;
+  color: var(--black);
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .form-control {
   width: 100%;
-  padding: 14px 16px;
+  padding: 14px 18px;
   border: var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--paper);
-  color: var(--carbon);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 2px 2px 0 var(--black);
+}
+.form-control::placeholder { color: var(--black); opacity: 0.4; font-weight: 500; }
+.form-control:focus { outline: none; background: var(--yellow-light); }
+select.form-control { cursor: pointer; border-radius: var(--radius-pill); }
+textarea.form-control {
+  resize: vertical;
+  min-height: 76px;
+  border-radius: var(--radius-md);
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 14px;
 }
-.form-control::placeholder { color: var(--carbon); opacity: 0.4; }
-.form-control:focus { outline: none; background: var(--sky); }
-select.form-control { cursor: pointer; }
-textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--font-body); }
 
 /* ============================================
-   BUTTONS (Checkout, Submit)
+   BUTTONS
    ============================================ */
 .checkout-btn, .submit-order-btn {
   width: 100%;
   border-radius: var(--radius-pill);
   padding: 18px;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 15px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
@@ -807,64 +823,62 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: transform 0.15s, background 0.15s;
+  transition: transform 0.12s, box-shadow 0.12s;
   margin-top: 12px;
+  box-shadow: var(--shadow-offset-sm);
+  border: var(--border);
 }
 .checkout-btn {
-  background: var(--carbon);
-  color: var(--paper);
-  border: var(--border);
+  background: var(--yellow);
+  color: var(--black);
 }
-.checkout-btn:hover:not(:disabled) { transform: translateY(-1px); background: var(--blue); }
+.checkout-btn:hover:not(:disabled) { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--black); }
 .submit-order-btn {
-  background: var(--mint);
-  color: var(--carbon);
-  border: var(--border);
+  background: var(--red);
+  color: var(--white);
 }
-.submit-order-btn:hover:not(:disabled) { transform: translateY(-1px); background: var(--sunburst); }
-.checkout-btn:disabled, .submit-order-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.submit-order-btn:hover:not(:disabled) { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--black); background: var(--red-deep); }
+.checkout-btn:disabled, .submit-order-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* ============================================
    ADDRESS BLOCK
    ============================================ */
 .address-block {
-  background: var(--paper);
+  background: var(--cream);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 16px;
   margin-bottom: 12px;
 }
 .address-block label {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--carbon);
-  opacity: 0.7;
+  letter-spacing: 0.06em;
+  color: var(--black);
   display: block;
   margin-bottom: 8px;
 }
 .address-row { display: flex; gap: 8px; }
 .address-row input { flex: 1; }
 .address-row button {
-  padding: 0 18px;
-  background: var(--blue);
-  color: #fff;
+  padding: 0 20px;
+  background: var(--yellow);
+  color: var(--black);
   border: var(--border);
   border-radius: var(--radius-pill);
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 2px 2px 0 var(--black);
 }
-.address-row button:hover:not(:disabled) { transform: translateY(-1px); }
+.address-row button:hover:not(:disabled) { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); }
 .address-row button:disabled { opacity: 0.4; cursor: wait; }
 
 .location-btn {
   width: 100%;
   padding: 14px;
-  background: var(--lavender);
-  color: var(--carbon);
+  background: var(--yellow);
+  color: var(--black);
   border: var(--border);
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -873,45 +887,41 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  box-shadow: var(--shadow-offset-sm);
 }
-.location-btn:hover:not(:disabled) { transform: translateY(-1px); background: var(--violet); color: #fff; }
+.location-btn:hover:not(:disabled) { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); }
 .location-btn:disabled { opacity: 0.4; cursor: wait; }
 
 .selected-address {
-  background: var(--mint);
+  background: var(--yellow-light);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 14px;
   margin-top: 12px;
   font-family: var(--font-body);
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.5;
   display: none;
 }
 .selected-address.active { display: block; }
-.selected-address strong { font-weight: 700; display: block; margin-bottom: 4px; }
+.selected-address strong { font-weight: 800; display: block; margin-bottom: 4px; }
 
-/* For whom */
 .for-whom-block {
-  background: var(--paper);
+  background: var(--cream);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 16px;
   margin-bottom: 12px;
 }
 .for-whom-block > label {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--carbon);
-  opacity: 0.7;
+  letter-spacing: 0.06em;
   display: block;
   margin-bottom: 10px;
 }
@@ -924,30 +934,30 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
   justify-content: center;
   gap: 8px;
   padding: 12px;
-  background: var(--paper);
+  background: var(--white);
   border: var(--border);
   border-radius: var(--radius-pill);
   cursor: pointer;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 11.5px;
-  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  transition: transform 0.15s, background 0.15s;
+  transition: transform 0.12s;
   text-align: center;
+  box-shadow: 2px 2px 0 var(--black);
 }
-.for-whom-option:hover { transform: translateY(-1px); }
-.for-whom-option.selected { background: var(--sky); }
+.for-whom-option:hover { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); }
+.for-whom-option.selected { background: var(--yellow); }
 .for-whom-option input { display: none; }
 
 .other-person-hint {
-  background: var(--sunburst);
+  background: var(--yellow-light);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 14px;
   display: none;
   font-family: var(--font-body);
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.5;
   margin-bottom: 12px;
 }
@@ -958,15 +968,14 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
    AUTO-CALC / DISTANCE
    ============================================ */
 .auto-calculating-status {
-  background: var(--sky);
+  background: var(--yellow-light);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 14px;
   margin-top: 12px;
   display: none;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-align: center;
@@ -976,9 +985,9 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .distance-details {
-  background: var(--lavender);
+  background: var(--yellow-light);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 16px;
   margin-top: 12px;
   display: none;
@@ -989,29 +998,31 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
   justify-content: space-between;
   margin-bottom: 8px;
   font-family: var(--font-body);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 .distance-row.total {
-  border-top: var(--border);
+  border-top: 2px dashed var(--black);
   padding-top: 10px;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 15px;
+  font-family: var(--font-display);
 }
 
 .delivery-limit-warning {
-  background: var(--ember);
-  color: #fff;
+  background: var(--red);
+  color: var(--white);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 12px 14px;
   margin-top: 12px;
   display: none;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 12.5px;
-  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 .delivery-limit-warning.active { display: block; }
 
@@ -1026,41 +1037,40 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
   border-radius: var(--radius-pill);
   text-align: center;
   cursor: pointer;
-  background: var(--paper);
+  background: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 12px;
-  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  transition: transform 0.15s, background 0.15s;
+  transition: transform 0.12s;
+  box-shadow: 2px 2px 0 var(--black);
 }
-.payment-method:hover { transform: translateY(-1px); }
-.payment-method.selected { background: var(--mint); }
+.payment-method:hover { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); }
+.payment-method.selected { background: var(--yellow); }
 .payment-method input { display: none; }
 
 .cash-details {
-  background: var(--paper);
+  background: var(--cream);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 16px;
   margin-top: 12px;
   display: none;
 }
 .cash-details.active { display: block; }
 .change-info {
-  background: var(--sunburst);
+  background: var(--yellow);
   border: var(--border);
   border-radius: var(--radius-pill);
   padding: 10px 16px;
   margin-top: 12px;
   text-align: center;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 14px;
   text-transform: uppercase;
   display: none;
 }
@@ -1070,9 +1080,9 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
    SCHEDULE SECTION
    ============================================ */
 .schedule-section {
-  background: var(--sky);
+  background: var(--yellow-light);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -1082,29 +1092,28 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
   align-items: flex-start;
   margin-bottom: 16px;
   padding-bottom: 14px;
-  border-bottom: var(--border);
+  border-bottom: 2px dashed var(--black);
 }
-.schedule-header > i { font-size: 20px; margin-top: 2px; }
+.schedule-header > i { font-size: 22px; margin-top: 2px; }
 .schedule-header strong {
   display: block;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   margin-bottom: 4px;
 }
 .schedule-header small {
   display: block;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 1.5;
 }
 .schedule-preview {
   margin-top: 14px;
-  background: var(--paper);
+  background: var(--white);
   border: var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   padding: 14px;
   font-family: var(--font-body);
   font-size: 13px;
@@ -1122,35 +1131,35 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: var(--carbon);
-  color: var(--paper);
-  width: 60px;
-  height: 60px;
+  background: var(--red);
+  color: var(--white);
+  width: 66px;
+  height: 66px;
   border-radius: var(--radius-pill);
   border: var(--border);
   z-index: 999;
   display: none;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   transition: transform 0.15s;
+  box-shadow: var(--shadow-offset);
 }
-.floating-cart-icon:hover { transform: scale(1.06); }
+.floating-cart-icon:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--black); }
 .cart-count {
   position: absolute;
   top: -8px;
   right: -8px;
-  background: var(--sunburst);
-  color: var(--carbon);
+  background: var(--yellow);
+  color: var(--black);
   border: var(--border);
-  min-width: 26px;
-  height: 26px;
+  min-width: 28px;
+  height: 28px;
   padding: 0 6px;
   border-radius: var(--radius-pill);
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1165,26 +1174,26 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--carbon);
-  color: var(--paper);
+  background: var(--black);
+  color: var(--yellow);
   border: var(--border);
-  padding: 14px 22px;
+  border-color: var(--yellow);
+  padding: 14px 24px;
   border-radius: var(--radius-pill);
   z-index: 3000;
   display: none;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   width: max-content;
   max-width: 90%;
   text-align: center;
 }
 .notification.show { display: block; animation: notifUp 0.25s ease; }
-.notification.success { background: var(--mint); color: var(--carbon); }
-.notification.error { background: var(--ember); color: #fff; }
-.notification.warning { background: var(--sunburst); color: var(--carbon); }
+.notification.success { background: var(--yellow); color: var(--black); border-color: var(--black); }
+.notification.error { background: var(--red); color: var(--white); border-color: var(--black); }
+.notification.warning { background: var(--orange); color: var(--black); border-color: var(--black); }
 @keyframes notifUp {
   from { opacity: 0; transform: translateX(-50%) translateY(16px); }
   to { opacity: 1; transform: translateX(-50%) translateY(0); }
@@ -1194,28 +1203,36 @@ textarea.form-control { resize: vertical; min-height: 76px; font-family: var(--f
    FOOTER
    ============================================ */
 footer {
-  background: var(--carbon);
-  color: var(--paper);
-  padding: 48px 0 32px;
+  background: var(--black);
+  color: var(--yellow);
+  padding: 52px 0 36px;
   text-align: center;
-  border-top: var(--border);
+  position: relative;
 }
 .footer-logo {
-  width: 72px;
-  height: 72px;
+  width: 90px;
+  height: 90px;
   border-radius: var(--radius-pill);
-  border: var(--border-thin);
-  margin-bottom: 16px;
+  border: 3px solid var(--yellow);
+  margin-bottom: 18px;
   object-fit: cover;
-  background: var(--sunburst);
+  background: var(--yellow);
 }
 footer p {
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 8px;
+}
+footer .footer-script {
+  font-family: var(--font-script);
+  font-size: 28px;
+  color: var(--white);
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 12px 0;
+  font-weight: 700;
 }
 .footer-social {
   display: flex;
@@ -1225,19 +1242,19 @@ footer p {
   flex-wrap: wrap;
 }
 .footer-social a {
-  color: var(--paper);
-  width: 42px;
-  height: 42px;
+  color: var(--yellow);
+  width: 46px;
+  height: 46px;
   border-radius: var(--radius-pill);
-  border: var(--border-thin);
+  border: 2px solid var(--yellow);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
-  transition: transform 0.15s, background 0.15s;
+  font-size: 16px;
+  transition: transform 0.15s, background 0.15s, color 0.15s;
   text-decoration: none;
 }
-.footer-social a:hover { transform: translateY(-2px); background: var(--blue); }
+.footer-social a:hover { transform: translateY(-3px); background: var(--yellow); color: var(--black); }
 
 /* ============================================
    MODALS
@@ -1246,7 +1263,7 @@ footer p {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(13,13,13,0.85);
   z-index: 2000;
   justify-content: center;
   align-items: center;
@@ -1255,75 +1272,80 @@ footer p {
 .product-modal.active, .confirmation-modal.active { display: flex; }
 
 .product-modal-content {
-  background: var(--paper);
+  background: var(--cream);
   border: var(--border);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-lg);
   max-width: 520px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+  box-shadow: var(--shadow-offset);
 }
 .product-modal-close {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: var(--ember);
-  color: #fff;
-  width: 38px;
-  height: 38px;
+  background: var(--red);
+  color: var(--white);
+  width: 42px;
+  height: 42px;
   border-radius: var(--radius-pill);
   border: var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
   z-index: 10;
+  box-shadow: var(--shadow-offset-sm);
 }
-.product-modal-close:hover { transform: scale(1.08); }
+.product-modal-close:hover { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); }
 .product-modal-img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   border-bottom: var(--border);
   display: block;
+  background: var(--yellow-light);
 }
 .product-modal-info { padding: 24px; }
 .product-modal-title {
   font-family: var(--font-display);
-  font-size: 32px;
-  line-height: 0.95;
+  font-size: 28px;
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   margin-bottom: 12px;
-  color: var(--carbon);
+  color: var(--black);
 }
 .product-modal-desc {
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--carbon);
-  opacity: 0.75;
+  color: var(--black);
+  opacity: 0.78;
   line-height: 1.55;
   margin-bottom: 20px;
+  font-weight: 500;
 }
 .product-modal-price {
   font-family: var(--font-display);
-  font-size: 46px;
+  font-size: 48px;
   line-height: 1;
-  color: var(--ember);
+  color: var(--red);
+  -webkit-text-stroke: 2px var(--black);
+  paint-order: stroke fill;
   margin-bottom: 24px;
 }
 
 .modifiers-section { margin-bottom: 24px; }
 .modifiers-title {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-bottom: var(--border);
+  letter-spacing: 0.08em;
+  border-bottom: 2px dashed var(--black);
   padding-bottom: 8px;
   margin-bottom: 12px;
 }
@@ -1332,36 +1354,37 @@ footer p {
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  border-bottom: var(--border);
+  border-bottom: 2px dashed var(--black);
   gap: 12px;
 }
 .modifier-item:last-child { border-bottom: none; }
-.modifier-name { font-family: var(--font-body); font-size: 13px; font-weight: 700; }
-.modifier-desc { font-family: var(--font-body); font-size: 11.5px; opacity: 0.7; }
-.modifier-price { font-family: var(--font-body); font-size: 13px; font-weight: 700; white-space: nowrap; }
+.modifier-name { font-family: var(--font-body); font-size: 13.5px; font-weight: 800; }
+.modifier-desc { font-family: var(--font-body); font-size: 11.5px; opacity: 0.75; font-weight: 500; }
+.modifier-price { font-family: var(--font-display); font-size: 14px; white-space: nowrap; color: var(--red); }
 .modifier-toggle {
-  width: 44px;
-  height: 26px;
+  width: 48px;
+  height: 28px;
   border-radius: var(--radius-pill);
-  background: var(--paper);
+  background: var(--white);
   border: var(--border);
   position: relative;
   cursor: pointer;
   flex-shrink: 0;
+  box-shadow: 2px 2px 0 var(--black);
 }
 .modifier-toggle::after {
   content: '';
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: var(--radius-pill);
-  background: var(--carbon);
-  top: 3px;
+  background: var(--black);
+  top: 2.5px;
   left: 3px;
   transition: all 0.25s;
 }
-.modifier-toggle.active { background: var(--mint); }
-.modifier-toggle.active::after { left: 23px; }
+.modifier-toggle.active { background: var(--yellow); }
+.modifier-toggle.active::after { left: 24px; }
 
 .modifier-option {
   display: flex;
@@ -1371,14 +1394,16 @@ footer p {
   border-radius: var(--radius-pill);
   cursor: pointer;
   margin-bottom: 8px;
-  transition: background 0.15s;
+  transition: background 0.15s, transform 0.12s;
+  background: var(--white);
+  box-shadow: 2px 2px 0 var(--black);
 }
-.modifier-option:hover { background: var(--sky); }
-.modifier-option.selected { background: var(--mint); }
+.modifier-option:hover { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); }
+.modifier-option.selected { background: var(--yellow); }
 .modifier-option input { display: none; }
 .modifier-option .radio-indicator {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: var(--radius-pill);
   border: var(--border);
   margin-right: 12px;
@@ -1386,13 +1411,14 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--white);
 }
 .modifier-option.selected .radio-indicator::after {
   content: '';
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   border-radius: var(--radius-pill);
-  background: var(--carbon);
+  background: var(--red);
 }
 .modifier-option label {
   flex: 1;
@@ -1403,107 +1429,113 @@ footer p {
   gap: 12px;
 }
 .modifier-option-text { display: flex; flex-direction: column; gap: 2px; }
-.option-price { font-family: var(--font-body); font-size: 12px; font-weight: 700; white-space: nowrap; }
+.option-price { font-family: var(--font-display); font-size: 13px; white-space: nowrap; color: var(--red); }
 
 .modal-quantity-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 22px;
   margin: 24px 0;
 }
 .modal-quantity-btn {
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   border-radius: var(--radius-pill);
-  background: var(--paper);
+  background: var(--white);
   border: var(--border);
-  color: var(--carbon);
+  color: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
+  box-shadow: var(--shadow-offset-sm);
 }
-.modal-quantity-btn:hover:not(:disabled) { background: var(--sunburst); }
-.modal-quantity-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.modal-quantity-btn:hover:not(:disabled) { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--black); background: var(--yellow); }
+.modal-quantity-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .modal-quantity-display {
-  min-width: 56px;
+  min-width: 60px;
   text-align: center;
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: 36px;
   line-height: 1;
 }
 .modal-add-to-cart {
   width: 100%;
-  background: var(--carbon);
-  color: var(--paper);
+  background: var(--yellow);
+  color: var(--black);
   border: var(--border);
   border-radius: var(--radius-pill);
   padding: 20px;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  box-shadow: var(--shadow-offset-sm);
 }
-.modal-add-to-cart:hover { background: var(--blue); }
+.modal-add-to-cart:hover { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--black); }
 .modal-total {
-  background: var(--sky);
+  background: var(--yellow-light);
   border: var(--border);
   padding: 16px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   margin: 20px 0;
   text-align: center;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 13px;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 .modal-total-price {
   font-family: var(--font-display);
-  font-size: 34px;
+  font-size: 36px;
   line-height: 1;
   margin-left: 8px;
+  color: var(--red);
+  -webkit-text-stroke: 1px var(--black);
+  paint-order: stroke fill;
 }
 
 .confirmation-modal-content {
-  background: var(--paper);
+  background: var(--cream);
   border: var(--border);
-  border-radius: var(--radius-card);
-  padding: 36px 28px;
+  border-radius: var(--radius-lg);
+  padding: 40px 28px;
   max-width: 480px;
   width: 90%;
   text-align: center;
+  box-shadow: var(--shadow-offset);
 }
 .confirmation-modal-logo {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: var(--radius-pill);
-  border: var(--border);
+  border: 3px solid var(--black);
   margin-bottom: 20px;
   object-fit: cover;
-  background: var(--sunburst);
+  background: var(--yellow);
 }
 .confirmation-modal-content h3 {
   font-family: var(--font-display);
   font-size: 36px;
-  line-height: 0.95;
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   margin-bottom: 16px;
-  color: var(--carbon);
+  color: var(--black);
 }
 .confirmation-modal-content p {
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.55;
   margin-bottom: 12px;
+  font-weight: 500;
 }
 
 /* ============================================
@@ -1516,34 +1548,39 @@ footer p {
 @media (max-width: 768px) {
   .container { padding: 0 16px; }
   .brand-name { font-size: 20px; }
-  .brand-logo { width: 44px; height: 44px; }
-  .hero { padding: 40px 0 60px; }
-  .display-text { font-size: clamp(64px, 20vw, 140px); }
-  .hero-tagline { font-size: 16px; }
+  .brand-name .sub { font-size: 14px; }
+  .brand-logo { width: 48px; height: 48px; }
+  .hero { padding: 40px 0 30px; }
+  .hero-script { font-size: 26px; }
   .panel { padding: 18px; }
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .product-img { height: 120px; }
   .product-info { padding: 12px; }
-  .product-title { font-size: 12.5px; }
+  .product-title { font-size: 13px; }
   .product-desc { display: none; }
-  .product-price { font-size: 18px; }
-  .add-to-cart { padding: 7px 10px; font-size: 10px; }
+  .product-price { font-size: 20px; }
+  .add-to-cart { padding: 8px 10px; font-size: 10px; }
   .product-footer { flex-direction: column; align-items: stretch; gap: 8px; }
   .product-quantity-controls { justify-content: center; }
   .floating-cart-icon { display: flex; }
   .for-whom-options { flex-direction: column; }
   .for-whom-option { min-width: auto; }
   .pill-nav { display: none; }
-  .section-title { font-size: 22px; }
-  .product-modal-title { font-size: 26px; }
+  .section-title { font-size: 24px; }
+  .product-modal-title { font-size: 24px; }
   .product-modal-price { font-size: 36px; }
   .confirmation-modal-content h3 { font-size: 28px; }
+  .info-card { padding: 22px; }
+  .info-card h3 { font-size: 26px; }
+  .hero-character.left { width: 70px; bottom: -4px; }
+  .hero-character.right { width: 66px; bottom: -4px; }
 }
 @media (max-width: 480px) {
-  .category-btn { padding: 8px 14px; font-size: 10.5px; }
+  .category-btn { padding: 9px 14px; font-size: 11px; }
   .payment-methods { flex-direction: column; }
   .option-row { flex-direction: column; }
   .pill-option { min-width: auto; }
+  .hero-character { display: none; }
 }
 </style>
 </head>
@@ -1552,20 +1589,30 @@ footer p {
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>✦ Pedidos martes a domingo · 3 PM – 10 PM</span>
-    <span>✦ Lunes cerrado</span>
-    <span>✦ +$10 c/u para llevar · -$5 c/u para comer aquí</span>
-    <span>✦ Envío $10 base + $10 por km · hasta 15 km</span>
-    <span>✦ Pedido mínimo para envío $100</span>
-    <span>✦ Calle A, Mnz VII 04400 CDMX</span>
-    <span>✦ Papas Sin Igual</span>
-    <span>✦ Pedidos martes a domingo · 3 PM – 10 PM</span>
-    <span>✦ Lunes cerrado</span>
-    <span>✦ +$10 c/u para llevar · -$5 c/u para comer aquí</span>
-    <span>✦ Envío $10 base + $10 por km · hasta 15 km</span>
-    <span>✦ Pedido mínimo para envío $100</span>
-    <span>✦ Calle A, Mnz VII 04400 CDMX</span>
-    <span>✦ Papas Sin Igual</span>
+    <span>★ Pedidos martes a domingo · 3 PM – 10 PM ★</span>
+    <i class="fas fa-fire"></i>
+    <span>Lunes cerrado</span>
+    <i class="fas fa-fire"></i>
+    <span>+$10 c/u para llevar · -$5 c/u para comer aquí</span>
+    <i class="fas fa-fire"></i>
+    <span>Envío $10 base + $10 por km</span>
+    <i class="fas fa-fire"></i>
+    <span>Calle A, Mnz VII 04400 CDMX</span>
+    <i class="fas fa-fire"></i>
+    <span>★ Papas Sin Igual ★</span>
+    <i class="fas fa-fire"></i>
+    <span>★ Pedidos martes a domingo · 3 PM – 10 PM ★</span>
+    <i class="fas fa-fire"></i>
+    <span>Lunes cerrado</span>
+    <i class="fas fa-fire"></i>
+    <span>+$10 c/u para llevar · -$5 c/u para comer aquí</span>
+    <i class="fas fa-fire"></i>
+    <span>Envío $10 base + $10 por km</span>
+    <i class="fas fa-fire"></i>
+    <span>Calle A, Mnz VII 04400 CDMX</span>
+    <i class="fas fa-fire"></i>
+    <span>★ Papas Sin Igual ★</span>
+    <i class="fas fa-fire"></i>
   </div>
 </div>
 
@@ -1573,16 +1620,18 @@ footer p {
 <header class="site-header">
   <div class="container">
     <div class="header-inner">
-      <a class="brand" href="#" style="text-decoration:none;">
+      <a class="brand" href="#">
         <img src="https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/byn.png/:/rs=w:282,h:210,cg:true,m/cr=w:282,h:210/qt=q:95" alt="Pipiris Fries" class="brand-logo">
-        <span class="brand-name">Pipiris<br>Fries</span>
+        <span class="brand-name">
+          Pipiris Fries
+          <span class="sub">Papas Sin Igual</span>
+        </span>
       </a>
       <nav class="pill-nav">
-        <a class="pill" href="#menu">Menú</a>
-        <a class="pill sun" href="https://wa.me/525624671550" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a class="pill lav" href="https://www.instagram.com/pipirisfries" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> IG</a>
+        <a class="pill" href="#menu"><i class="fas fa-utensils"></i> Menú</a>
+        <a class="pill red" href="https://wa.me/525624671550" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Pedir</a>
       </nav>
-      <button class="pill icon-only" id="themeToggle" type="button" aria-label="Cambiar tema">
+      <button class="pill white icon-only" id="themeToggle" type="button" aria-label="Cambiar tema">
         <i class="fas fa-moon" id="themeToggleIcon"></i>
       </button>
     </div>
@@ -1591,42 +1640,43 @@ footer p {
 
 <!-- HERO -->
 <section class="hero">
-  <div class="sticker circle s1">★</div>
-  <div class="sticker wallet s2">🍟</div>
-  <div class="sticker circle s3">✦</div>
-  <div class="sticker wallet s4">🔥</div>
-  <div class="sticker circle s5">✦</div>
-  <div class="sticker wallet s6">★</div>
+  <div class="hero-character left">
+    <img src="https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/byn.png/:/rs=w:282,h:210,cg:true,m/cr=w:282,h:210/qt=q:95" alt="">
+  </div>
+  <div class="hero-character right">
+    <img src="https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/byn.png/:/rs=w:282,h:210,cg:true,m/cr=w:282,h:210/qt=q:95" alt="">
+  </div>
 
-  <div class="container">
-    <div class="hero-display">
-      <span class="display-text">Pipiris</span>
-      <span class="display-text mid">Fries</span>
-    </div>
-    <div class="hero-tagline">
-      <span class="sun">Papas</span>
-      <span class="mint">Sin</span>
-      <span class="blue">Igual</span>
+  <div class="container hero-inner">
+    <img src="https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/byn.png/:/rs=w:282,h:210,cg:true,m/cr=w:282,h:210/qt=q:95" alt="Pipiris Fries" class="hero-logo-img">
+    <p class="hero-script">Papas Sin Igual</p>
+    <div class="hero-tagline-badges">
+      <span class="hero-badge"><i class="fas fa-fire"></i> Papas Cargadas</span>
+      <span class="hero-badge red"><i class="fas fa-motorcycle"></i> Envío a domicilio</span>
+      <span class="hero-badge white"><i class="fas fa-bag-shopping"></i> Para llevar</span>
     </div>
   </div>
 </section>
 
+<!-- DRIP DIVIDER -->
+<div class="drip-edge"></div>
+
 <!-- INFO BAND -->
-<section class="band-white">
+<section class="band-yellow">
   <div class="container">
     <div class="info-card">
-      <h3>Tradición en cada papa</h3>
+      <h3>Papas <span class="accent">Sin Igual</span></h3>
       <p><strong>Martes a Domingo</strong> · horario variable por día</p>
       <p><i class="fas fa-map-pin"></i> Calle A, Mnz VII 04400 Mexico City, Mexico</p>
-      <div style="margin-top: 14px;">
-        <span class="info-badge sun"><i class="fas fa-motorcycle"></i> Envío $10 base + $10/km</span>
-        <span class="info-badge mint"><i class="fas fa-bag-shopping"></i> +$10 c/u para llevar</span>
-        <span class="info-badge lav"><i class="fas fa-utensils"></i> -$5 c/u comer aquí</span>
-        <span class="info-badge ember"><i class="fas fa-circle-exclamation"></i> Lunes cerrado</span>
+      <div class="info-badges">
+        <span class="info-badge"><i class="fas fa-motorcycle"></i> Envío $10 base + $10/km</span>
+        <span class="info-badge red"><i class="fas fa-bag-shopping"></i> +$10 para llevar</span>
+        <span class="info-badge white"><i class="fas fa-utensils"></i> -$5 comer aquí</span>
+        <span class="info-badge orange"><i class="fas fa-circle-exclamation"></i> Lunes cerrado</span>
       </div>
     </div>
 
-    <div class="schedule-banner" id="scheduleBanner" style="margin-top: 20px;">
+    <div class="schedule-banner" id="scheduleBanner">
       <div class="banner-icon" id="scheduleBannerIcon">
         <i class="fas fa-clock" id="scheduleBannerIconInner"></i>
       </div>
@@ -1638,8 +1688,11 @@ footer p {
   </div>
 </section>
 
-<!-- MENU + CART -->
-<section class="band-sky" id="menu" style="padding: 40px 0;">
+<!-- DRIP DIVIDER -->
+<div class="drip-edge"></div>
+
+<!-- MENU -->
+<section class="band-cream" id="menu">
   <div class="container">
     <div class="main-layout">
       <!-- MENU -->
@@ -1704,11 +1757,11 @@ footer p {
           </div>
         </div>
 
-        <!-- Packaging mode (only for pickup) -->
+        <!-- Packaging -->
         <div class="option-group" id="packagingSection">
           <span class="option-group-label">Modo</span>
           <div class="option-row">
-            <label class="pill-option selected alt" id="takeawayOption">
+            <label class="pill-option selected" id="takeawayOption">
               <input type="radio" name="packagingMode" value="takeaway" checked>
               <i class="fas fa-bag-shopping"></i>
               <span>Para llevar (+$10)</span>
@@ -1734,18 +1787,18 @@ footer p {
               <label class="for-whom-option" id="forOtherOption">
                 <input type="radio" name="deliveryFor" value="other">
                 <i class="fas fa-user-friends"></i>
-                <span>Para otra persona</span>
+                <span>Otra persona</span>
               </label>
             </div>
           </div>
 
           <div class="other-person-hint" id="otherPersonHint">
             <i class="fas fa-info-circle"></i>
-            <strong>Ingresa la dirección de quien recibirá el pedido.</strong> Verifica que sea la ubicación correcta.
+            <strong>Ingresa la dirección de quien recibirá el pedido.</strong>
           </div>
 
           <button id="useCurrentLocationBtn" type="button" class="location-btn">
-            <i class="fas fa-location-arrow"></i> Usar mi ubicación actual
+            <i class="fas fa-location-arrow"></i> Usar mi ubicación
           </button>
 
           <div class="address-block">
@@ -1779,7 +1832,7 @@ footer p {
           </div>
 
           <div class="delivery-limit-warning" id="deliveryLimitWarning">
-            <i class="fas fa-exclamation-triangle"></i> No entregamos a más de 15 km.
+            <i class="fas fa-exclamation-triangle"></i> No entregamos a más de 15 km
           </div>
         </div>
 
@@ -1791,8 +1844,11 @@ footer p {
   </div>
 </section>
 
+<!-- DRIP DIVIDER -->
+<div class="drip-edge"></div>
+
 <!-- CHECKOUT FORM -->
-<section class="band-white" id="checkoutForm" style="display: none; padding: 40px 0;">
+<section class="band-yellow" id="checkoutForm" style="display: none;">
   <div class="container">
     <div class="panel" style="max-width: 620px; margin: 0 auto;">
       <h2 class="section-title" id="checkoutFormTitle">Finalizar Pedido</h2>
@@ -1858,7 +1914,7 @@ footer p {
           </div>
 
           <div class="cash-details" id="cashDetails">
-            <label style="font-family:var(--font-body); font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; opacity:0.7;">¿Con cuánto pagarás? *</label>
+            <label style="font-family:var(--font-display); font-size:12px; letter-spacing:0.06em; text-transform:uppercase;">¿Con cuánto pagarás? *</label>
             <input type="number" id="cashAmount" class="form-control" placeholder="Ej. 500.00" min="0" step="0.01" inputmode="decimal">
             <div class="change-info" id="changeInfo">
               Cambio: <span id="changeAmount">$0.00</span>
@@ -1871,12 +1927,12 @@ footer p {
           <textarea id="customerNotes" class="form-control" rows="2" placeholder="Sin cebolla, más aderezo, etc."></textarea>
         </div>
 
-        <div id="orderSummaryFinal" style="background:var(--sky); border:var(--border); padding:16px; border-radius:var(--radius-sm); margin-bottom:16px; font-family:var(--font-body); font-size:13px;"></div>
+        <div id="orderSummaryFinal" style="background:var(--cream); border:var(--border); padding:18px; border-radius:var(--radius-md); margin-bottom:16px; font-family:var(--font-body); font-size:13.5px;"></div>
 
         <button type="submit" class="submit-order-btn" id="submitOrderBtn">
           <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
         </button>
-        <button type="button" id="cancelCheckout" style="width:100%; padding:14px; background:transparent; border:none; color:var(--carbon); margin-top:8px; cursor:pointer; font-family:var(--font-body); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">
+        <button type="button" id="cancelCheckout" style="width:100%; padding:14px; background:transparent; border:none; color:var(--black); margin-top:8px; cursor:pointer; font-family:var(--font-display); font-size:13px; text-transform:uppercase; letter-spacing:0.06em;">
           <i class="fas fa-arrow-left"></i> Regresar al Menú
         </button>
       </form>
@@ -1920,9 +1976,9 @@ footer p {
   <div class="confirmation-modal-content">
     <img src="https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/byn.png/:/rs=w:282,h:210,cg:true,m/cr=w:282,h:210/qt=q:95" alt="Logo" class="confirmation-modal-logo">
     <h3 id="confirmationTitle">¡Pedido Enviado!</h3>
-    <p id="confirmationScheduleInfo" style="display:none; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:15px;"></p>
+    <p id="confirmationScheduleInfo" style="display:none; font-family:var(--font-display); font-size:14px; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:15px; color:var(--red);"></p>
     <p>Tu pedido ha sido enviado por WhatsApp. Te contactaremos pronto para confirmar.</p>
-    <p style="font-weight:700;">WhatsApp: +52 56 2467 1550</p>
+    <p style="font-weight:800;">WhatsApp: +52 56 2467 1550</p>
     <button type="button" class="checkout-btn" id="closeModalBtn" style="margin-top:20px;">
       <i class="fas fa-check"></i> Cerrar
     </button>
@@ -1940,6 +1996,7 @@ footer p {
   <div class="container">
     <img src="https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/byn.png/:/rs=w:282,h:210,cg:true,m/cr=w:282,h:210/qt=q:95" alt="Logo" class="footer-logo">
     <p>&copy; 2025 Pipiris Fries</p>
+    <p class="footer-script">Papas Sin Igual</p>
     <div class="footer-social">
       <a href="https://www.facebook.com/114433747086457" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/pipirisfries" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
@@ -1948,7 +2005,7 @@ footer p {
       <a href="https://pipirisfries.com/menu" target="_blank" rel="noopener"><i class="fas fa-globe"></i></a>
     </div>
     <p><i class="fab fa-whatsapp"></i> +52 56 2467 1550</p>
-    <p style="opacity:0.6; font-size:11px; margin-top:8px;">Calle A, Mnz VII 04400 Mexico City</p>
+    <p style="opacity:0.55; font-size:11px; margin-top:8px;">Calle A, Mnz VII 04400 CDMX</p>
   </div>
 </footer>
 
@@ -1970,18 +2027,17 @@ const SCHEDULE_SCAN_DAYS = 28;
 
 const shippingRates = { baseRate: 10.00, perKmRate: 10.00, maxDistance: 15, minOrderForDelivery: 100.00 };
 
-/* Packaging modifiers por unidad */
-const PACKAGING_TAKEAWAY = 10;   // +$10 para llevar
-const PACKAGING_DINEIN  = -5;    // -$5 para comer aquí
+const PACKAGING_TAKEAWAY = 10;
+const PACKAGING_DINEIN  = -5;
 
 const DAY_HOURS = {
-  0: { open: 15*60, close: 20*60 + 30 },  // Domingo
-  1: null,                                  // Lunes cerrado
-  2: { open: 15*60, close: 21*60 },        // Martes
-  3: { open: 15*60, close: 21*60 },        // Miércoles
-  4: { open: 15*60, close: 21*60 },        // Jueves
-  5: { open: 15*60, close: 22*60 },        // Viernes
-  6: { open: 15*60, close: 22*60 }         // Sábado
+  0: { open: 15*60, close: 20*60 + 30 },
+  1: null,
+  2: { open: 15*60, close: 21*60 },
+  3: { open: 15*60, close: 21*60 },
+  4: { open: 15*60, close: 21*60 },
+  5: { open: 15*60, close: 22*60 },
+  6: { open: 15*60, close: 22*60 }
 };
 const DAY_NAMES = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
 const DAY_SHORT = { 'Sun':0, 'Mon':1, 'Tue':2, 'Wed':3, 'Thu':4, 'Fri':5, 'Sat':6 };
@@ -1990,58 +2046,47 @@ const DAY_SHORT = { 'Sun':0, 'Mon':1, 'Tue':2, 'Wed':3, 'Thu':4, 'Fri':5, 'Sat':
    MODIFIERS
    ============================================ */
 const EXTRAS_PAPAS = [
-  { id: 200, name: "Extra proteína 1/2", description: "Carne, boneless, boloñesa, tocino al maple, pechuga, chili, tocino o pulled pork", price: 35.00 },
-  { id: 201, name: "Extra proteína completa", description: "Carne, boneless, boloñesa, tocino al maple, pechuga, chili, tocino o pulled pork", price: 55.00 },
+  { id: 200, name: "Extra proteína 1/2", description: "Carne, boneless, boloñesa, tocino, pechuga, chili o pulled pork", price: 35.00 },
+  { id: 201, name: "Extra proteína completa", description: "Porción completa de proteína", price: 55.00 },
   { id: 202, name: "Extra queso", description: "Gouda, cheddar, mozzarella o parmesano", price: 35.00 },
   { id: 203, name: "Extra guacamole", description: "Guacamole fresco adicional", price: 30.00 },
   { id: 204, name: "Aderezo extra", description: "A partir de la segunda (la primera es gratis)", price: 15.00 }
 ];
-
 const TOPPINGS_POSTRES = [
-  { id: 210, name: "Lechera", description: "Leche condensada", price: 0.00 },
+  { id: 210, name: "Lechera", description: "", price: 0.00 },
   { id: 211, name: "Dulce de leche", description: "", price: 0.00 },
   { id: 212, name: "Choco-Avellana", description: "", price: 0.00 }
 ];
-
-const EXTRAS_POSTRES = [
-  { id: 213, name: "Bola de helado (100g)", description: "", price: 35.00 }
-];
-
+const EXTRAS_POSTRES = [{ id: 213, name: "Bola de helado (100g)", description: "", price: 35.00 }];
 const SABORES_MALTEADA_LIGERA = [
-  { id: 220, name: "Chocolate", description: "Con galleta wafer de chocolate", price: 0.00 },
-  { id: 221, name: "Cookies & Cream", description: "Con galleta tipo Oreo", price: 0.00 },
+  { id: 220, name: "Chocolate", description: "Con galleta wafer", price: 0.00 },
+  { id: 221, name: "Cookies & Cream", description: "Con galleta Oreo", price: 0.00 },
   { id: 222, name: "Strawberry", description: "Con galleta wafer de fresa", price: 0.00 },
   { id: 223, name: "Vainilla", description: "Con galleta wafer de vainilla", price: 0.00 }
 ];
-
 const SABORES_MALTEADA_PREMIUM = [
-  { id: 230, name: "Chocolate shake", description: "Helado de chocolate, crema de chocolate y galletas wafer dentro.", price: 0.00 },
-  { id: 231, name: "Cookies & cream shake", description: "Helado de cookies & cream, crema de chocolate y galletas Oreo dentro.", price: 0.00 },
-  { id: 232, name: "Sweet & salty shake", description: "Helado de vainilla con crema de cacahuate, pretzel salado y toque de chocolate.", price: 0.00 }
+  { id: 230, name: "Chocolate shake", description: "Helado de chocolate, crema y galletas wafer dentro", price: 0.00 },
+  { id: 231, name: "Cookies & cream shake", description: "Helado cookies & cream, crema y Oreo dentro", price: 0.00 },
+  { id: 232, name: "Sweet & salty shake", description: "Vainilla con crema de cacahuate, pretzel y chocolate", price: 0.00 }
 ];
-
 const SABORES_FLOTANTE = [
-  { id: 240, name: "Nieve de limón", description: "Con tu refresco a elegir", price: 0.00 },
-  { id: 241, name: "Helado de vainilla", description: "Con tu refresco a elegir", price: 0.00 }
+  { id: 240, name: "Nieve de limón", description: "", price: 0.00 },
+  { id: 241, name: "Helado de vainilla", description: "", price: 0.00 }
 ];
-
 const REFRESCOS = [
   { id: 250, name: "Coca-Cola", description: "", price: 0.00 },
   { id: 251, name: "Coca-Cola sin Azúcar", description: "", price: 0.00 },
   { id: 252, name: "Sprite", description: "", price: 0.00 },
   { id: 253, name: "Ciel Mineral", description: "", price: 0.00 }
 ];
-
 const SABORES_BOING = [
   { id: 260, name: "Guayaba", description: "", price: 0.00 },
   { id: 261, name: "Mango", description: "", price: 0.00 }
 ];
-
 const CERVEZA_TIPO = [
   { id: 270, name: "Modelo especial clara", description: "", price: 0.00 },
   { id: 271, name: "Modelo especial oscura", description: "", price: 0.00 }
 ];
-
 const SABORES_FRAPPE = [
   { id: 280, name: "Coca-Cola", description: "", price: 0.00 },
   { id: 281, name: "Sprite", description: "", price: 0.00 },
@@ -2056,41 +2101,36 @@ const products = [
   { id: 2, name: "Guacamole para Compartir", category: "entradas", description: "Guacamole en cama de totopos con queso cheddar y ranch. Para compartir.", price: 100.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Guac.jpg/:/cr=t:19.93%25,l:15.43%25,w:67.54%25,h:67.57%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: [] } },
   { id: 3, name: "Jalapeño Poppers (4 pzas)", category: "entradas", description: "Jalapeños rellenos de queso crema, con tocino y queso cheddar.", price: 100.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Jalape%C3%B1os.jpg/:/cr=t:19.35%25,l:14.6%25,w:80.61%25,h:80.65%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: [{ id: 300, name: "Jalapeño extra", description: "", price: 30.00 }] } },
   { id: 4, name: "Onion Rings (4 pzas)", category: "entradas", description: "Aros de cebolla con salsa o aderezo de tu elección.", price: 60.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Only.jpg/:/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: [{ id: 301, name: "Aro extra", description: "", price: 15.00 }] } },
-
-  { id: 5, name: "Asada Fries", category: "pipiris", description: "Papas cargadas de carne asada a la parrilla y guacamole fresco, queso gouda & cheddar, ranch y jalapeños.", price: 160.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Asada.jpg/:/cr=t:4.32%25,l:1.49%25,w:85.58%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 5, name: "Asada Fries", category: "pipiris", description: "Papas cargadas de carne asada a la parrilla y guacamole fresco, gouda & cheddar, ranch y jalapeños.", price: 160.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Asada.jpg/:/cr=t:4.32%25,l:1.49%25,w:85.58%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
   { id: 6, name: "Bacon Cheese Fries", category: "pipiris", description: "Papas con tocino holandés ahumado al maple, queso gouda & cheddar, ranch.", price: 140.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Bacon.jpg/:/cr=t:22.4%25,l:15.46%25,w:70.42%25,h:68.43%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
   { id: 7, name: "Boloñesa Fries", category: "pipiris", description: "Papas con carne molida a las hierbas finas en salsa marinara, mozzarella & parmesano.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Bolo%C3%B1esa.jpg/:/cr=t:15.25%25,l:7.54%25,w:82.07%25,h:84.75%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 8, name: "Cheese Steak Fries", category: "pipiris", description: "Papas con carne asada a la parrilla y cebolla caramelizada, queso gouda & cheddar, ranch.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Steak.jpg/:/cr=t:0%25,l:1.63%25,w:96.74%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 9, name: "Boneless BBQ Fries", category: "pipiris", description: "Papas con boneless en salsa BBQ, queso gouda & mozarella, aderezo blue cheese.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/_DSC819858.jpg/:/cr=t:25.59%25,l:0%25,w:100%25,h:48.81%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 10, name: "Boneless Hot Fries", category: "pipiris", description: "Papas con boneless bañada en salsa hot, queso gouda & cheddar, ranch.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Hot.jpg/:/cr=t:0%25,l:4.86%25,w:91.07%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 11, name: "Boneless Mango Habanero Fries", category: "pipiris", description: "Papas con boneless en salsa mango habanero, queso gouda & mozarella, blue cheese.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Habanero.jpg/:/cr=t:10.08%25,l:10.01%25,w:73%25,h:84.75%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 12, name: "Boneless Gochu Fries", category: "pipiris", description: "Papas con boneless en salsa agridulce picante gochujang, queso gouda & mozzarella, ranch, cebollín y ajonjolí negro.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Gochu.jpg/:/cr=t:6.91%25,l:20.59%25,w:79.41%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 13, name: "Zarzamora Habanero Fries", category: "pipiris", description: "Papas con queso gouda, boneless en salsa zarzamora habanero y tocino, cubiertas con gouda & mozzarella, blue cheese.", price: 160.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Habanero.jpg/:/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 14, name: "Chicken Parm Fries", category: "pipiris", description: "Papas con boneless naturales en salsa de tomate, mozzarella & parmesano.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Parm.jpg/:/cr=t:5.66%25,l:7.38%25,w:83.22%25,h:94.34%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 15, name: "Chicken Bacon Ranch Fries", category: "pipiris", description: "Papas con pechuga asada a la parrilla con tocino holandés al maple, gouda & cheddar, ranch.", price: 145.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/CBR-4925df1.jpg/:/cr=t:0%25,l:3.89%25,w:92.22%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 16, name: "Chili Cheese Fries", category: "pipiris", description: "Papas con chili con carne mixta, queso gouda cheddar, ranch.", price: 145.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Chili.jpg/:/cr=t:0%25,l:5.89%25,w:88.22%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 17, name: "Pulled Pork Fries", category: "pipiris", description: "Papas con pulled pork en salsa BBQ, gouda & cheddar, ranch. *Cambia a mango habanero sin costo extra.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Pork.jpg/:/cr=t:0%25,l:5.89%25,w:88.22%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 18, name: "Cheese Lovers Fries", category: "pipiris", description: "Papas con gouda, mozzarella & cheddar, ranch.", price: 140.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Lovers.jpg/:/cr=t:5.66%25,l:0%25,w:90.62%25,h:94.34%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-  { id: 19, name: "Boneless Kids", category: "pipiris", description: "Papas sazonadas con sal, boneless naturales acompañadas de gouda y cheddar.", price: 140.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Kids.jpg/:/cr=t:2.83%25,l:5.3%25,w:89.4%25,h:94.34%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 8, name: "Cheese Steak Fries", category: "pipiris", description: "Papas con carne asada a la parrilla y cebolla caramelizada, gouda & cheddar, ranch.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Steak.jpg/:/cr=t:0%25,l:1.63%25,w:96.74%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 9, name: "Boneless BBQ Fries", category: "pipiris", description: "Boneless en salsa BBQ, gouda & mozarella, aderezo blue cheese.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/_DSC819858.jpg/:/cr=t:25.59%25,l:0%25,w:100%25,h:48.81%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 10, name: "Boneless Hot Fries", category: "pipiris", description: "Boneless en salsa hot, gouda & cheddar, ranch.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Hot.jpg/:/cr=t:0%25,l:4.86%25,w:91.07%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 11, name: "Boneless Mango Habanero Fries", category: "pipiris", description: "Boneless en salsa mango habanero, gouda & mozarella, blue cheese.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Habanero.jpg/:/cr=t:10.08%25,l:10.01%25,w:73%25,h:84.75%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 12, name: "Boneless Gochu Fries", category: "pipiris", description: "Boneless en salsa agridulce picante gochujang, gouda & mozzarella, ranch, cebollín y ajonjolí negro.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Gochu.jpg/:/cr=t:6.91%25,l:20.59%25,w:79.41%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 13, name: "Zarzamora Habanero Fries", category: "pipiris", description: "Queso gouda, boneless en salsa zarzamora habanero y tocino, con gouda & mozzarella, blue cheese.", price: 160.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Habanero.jpg/:/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 14, name: "Chicken Parm Fries", category: "pipiris", description: "Boneless naturales en salsa de tomate, mozzarella & parmesano.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Parm.jpg/:/cr=t:5.66%25,l:7.38%25,w:83.22%25,h:94.34%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 15, name: "Chicken Bacon Ranch Fries", category: "pipiris", description: "Pechuga asada con tocino holandés al maple, gouda & cheddar, ranch.", price: 145.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/CBR-4925df1.jpg/:/cr=t:0%25,l:3.89%25,w:92.22%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 16, name: "Chili Cheese Fries", category: "pipiris", description: "Chili con carne mixta, gouda cheddar, ranch.", price: 145.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Chili.jpg/:/cr=t:0%25,l:5.89%25,w:88.22%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 17, name: "Pulled Pork Fries", category: "pipiris", description: "Pulled pork en salsa BBQ, gouda & cheddar, ranch. *Cambia a mango habanero sin costo extra.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Pork.jpg/:/cr=t:0%25,l:5.89%25,w:88.22%25,h:100%25/rs=w:1080,h:812,cg:true", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 18, name: "Cheese Lovers Fries", category: "pipiris", description: "Gouda, mozzarella & cheddar, ranch.", price: 140.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Lovers.jpg/:/cr=t:5.66%25,l:0%25,w:90.62%25,h:94.34%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
+  { id: 19, name: "Boneless Kids", category: "pipiris", description: "Papas con sal, boneless naturales, gouda y cheddar.", price: 140.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Kids.jpg/:/cr=t:2.83%25,l:5.3%25,w:89.4%25,h:94.34%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
   { id: 20, name: "Only Fries", category: "pipiris", description: "250 g de papas a la francesa sazonadas, o agrega extras.", price: 85.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Only.jpg/:/cr=t:13.24%25,l:17.3%25,w:65.4%25,h:73.53%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-
   { id: 21, name: "Asada Nachos", category: "nachos", description: "Totopos con carne asada y guacamole, gouda & cheddar, ranch y jalapeños.", price: 150.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Asada%20N.jpg/:/cr=t:7.1%25,l:10.62%25,w:78.76%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
   { id: 22, name: "Chili Cheese Nachos", category: "nachos", description: "Totopos con chili con carne, gouda & cheddar, ranch.", price: 145.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Chili%20N.jpg/:/cr=t:9.49%25,l:6.11%25,w:86.28%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: EXTRAS_PAPAS } },
-
-  { id: 23, name: "Sweet Potato Fries", category: "postres", description: "Camote amarillo como papa a la francesa con crumble de galleta María & Oreo y topping a elegir.", price: 145.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Sweet.jpg/:/cr=t:10.71%25,l:3.05%25,w:89.25%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: TOPPINGS_POSTRES, extras: EXTRAS_POSTRES } },
+  { id: 23, name: "Sweet Potato Fries", category: "postres", description: "Camote amarillo como papa a la francesa con crumble de María & Oreo y topping a elegir.", price: 145.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Sweet.jpg/:/cr=t:10.71%25,l:3.05%25,w:89.25%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: TOPPINGS_POSTRES, extras: EXTRAS_POSTRES } },
   { id: 24, name: "Macho Fries", category: "postres", description: "Plátano macho con crumble de María & Oreo y topping a elegir.", price: 145.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Macho.jpg/:/cr=t:10.08%25,l:0%25,w:78.28%25,h:84.75%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: TOPPINGS_POSTRES, extras: EXTRAS_POSTRES } },
   { id: 25, name: "Crumble & Cream", category: "postres", description: "Crumble de Oreo y María + 1 bola de helado de cada sabor: cookies & cream, vainilla, fresa y chocolate.", price: 100.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/_DSC91748.jpg/:/cr=t:1.76%25,l:35.34%25,w:62.45%25,h:70.42%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: [], extras: [] } },
-
   { id: 26, name: "Malteada Premium", category: "malteadas", description: "Elige tu sabor. Incluye galleta y decoración especial.", price: 115.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Malteadas.jpg/:/cr=t:6.07%25,l:8.39%25,w:83.22%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: SABORES_MALTEADA_PREMIUM, extras: [] } },
   { id: 27, name: "Malteada Ligera", category: "malteadas", description: "Malteada sencilla con galleta tipo wafer.", price: 70.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Malteadas.jpg/:/cr=t:6.07%25,l:8.39%25,w:83.22%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: SABORES_MALTEADA_LIGERA, extras: [] } },
-
   { id: 28, name: "Flotante de Limón", category: "bebidas", description: "Nieve de limón o helado de vainilla con tu refresco a elegir.", price: 55.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Flot.jpg/:/cr=t:10.71%25,l:18.92%25,w:81.08%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: SABORES_FLOTANTE, extras: [] } },
-  { id: 29, name: "Frappe de Limón", category: "bebidas", description: "Refresco con nieve de limón, escarchado piquín/chamoy o sal/limón, con rebanadas de mango enchilado.", price: 90.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Frap.jpg/:/cr=t:4.45%25,l:0%25,w:100%25,h:91.09%25/rs=w:1080,h:812,cg:true", modifiers: { selection: SABORES_FRAPPE, extras: [] } },
-  { id: 30, name: "Frappe de Mango / Mango Tajín", category: "bebidas", description: "Refresco con nieve de mango o mango tajín, escarchado, con mango enchilado.", price: 90.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Frap%202.jpg/:/cr=t:10.71%25,l:5.68%25,w:82.2%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: SABORES_FRAPPE, extras: [] } },
+  { id: 29, name: "Frappe de Limón", category: "bebidas", description: "Refresco con nieve de limón, escarchado piquín/chamoy o sal/limón, con mango enchilado.", price: 90.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Frap.jpg/:/cr=t:4.45%25,l:0%25,w:100%25,h:91.09%25/rs=w:1080,h:812,cg:true", modifiers: { selection: SABORES_FRAPPE, extras: [] } },
+  { id: 30, name: "Frappe de Mango / Tajín", category: "bebidas", description: "Refresco con nieve de mango o mango tajín, escarchado, con mango enchilado.", price: 90.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Frap%202.jpg/:/cr=t:10.71%25,l:5.68%25,w:82.2%25,h:89.29%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: SABORES_FRAPPE, extras: [] } },
   { id: 31, name: "Refrescos", category: "bebidas", description: "Coca Cola, sin azúcar, Sprite, Ciel Mineral.", price: 35.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Flot.jpg/:/rs=w:1080,h:812,cg:true", modifiers: { selection: REFRESCOS, extras: [] } },
   { id: 32, name: "Boing", category: "bebidas", description: "Guayaba o Mango.", price: 35.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Flot.jpg/:/rs=w:1080,h:812,cg:true", modifiers: { selection: SABORES_BOING, extras: [] } },
-  { id: 33, name: "Cerveza", category: "bebidas", description: "Modelo especial clara u oscura. *Hasta las 6 PM. +18.", price: 50.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Cerveza.jpg/:/cr=t:32.43%25,l:17.55%25,w:64.34%25,h:67.57%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: CERVEZA_TIPO, extras: [] } },
-  { id: 34, name: "Michelada", category: "bebidas", description: "Escarchado piquín/chamoy o sal/limón, con banderilla de tamarindo. *Hasta las 6 PM. +18.", price: 85.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Miche.jpg/:/cr=t:29.85%25,l:17.43%25,w:64.94%25,h:60.7%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: CERVEZA_TIPO, extras: [] } }
+  { id: 33, name: "Cerveza", category: "bebidas", description: "Modelo especial clara u oscura. *Hasta 6 PM. +18.", price: 50.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Cerveza.jpg/:/cr=t:32.43%25,l:17.55%25,w:64.34%25,h:67.57%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: CERVEZA_TIPO, extras: [] } },
+  { id: 34, name: "Michelada", category: "bebidas", description: "Escarchado piquín/chamoy o sal/limón, con banderilla de tamarindo. *Hasta 6 PM. +18.", price: 85.00, image: "https://img1.wsimg.com/isteam/ip/81024061-f9f2-4581-9a66-9b8d63c540c6/Miche.jpg/:/cr=t:29.85%25,l:17.43%25,w:64.94%25,h:60.7%25/rs=w:1080,h:812,cg:true,m", modifiers: { selection: CERVEZA_TIPO, extras: [] } }
 ];
 
 /* ============================================
@@ -2119,7 +2159,7 @@ let deliveryZone = "";
 let paymentMethod = 'card';
 let deliveryFor = 'me';
 let deliveryType = 'pickup';
-let packagingMode = 'takeaway'; // takeaway | dine-in
+let packagingMode = 'takeaway';
 
 let currentModalProduct = null;
 let modalQuantity = 1;
@@ -2131,7 +2171,7 @@ let lastScheduleStateIsOpen = null;
 let scheduleState = { isOpen: false, isOpenDay: false, todayHours: null, dow: 1 };
 
 /* ============================================
-   PACKAGING / TOTAL HELPERS
+   HELPERS
    ============================================ */
 function getPackagingModifierPerUnit() {
   if (deliveryType === 'delivery') return 0;
@@ -2139,44 +2179,14 @@ function getPackagingModifierPerUnit() {
   if (packagingMode === 'dine-in') return PACKAGING_DINEIN;
   return 0;
 }
-
-function getItemEffectiveUnitPrice(item) {
-  return item.price + getPackagingModifierPerUnit();
-}
-
+function getItemEffectiveUnitPrice(item) { return item.price + getPackagingModifierPerUnit(); }
 function getPackagingTotal() {
   const totalQty = cart.reduce((s, i) => s + i.quantity, 0);
   return getPackagingModifierPerUnit() * totalQty;
 }
+function getCartSubtotal() { return cart.reduce((s, i) => s + getItemEffectiveUnitPrice(i) * i.quantity, 0); }
+function getBaseSubtotal() { return cart.reduce((s, i) => s + i.price * i.quantity, 0); }
 
-function getCartSubtotal() {
-  return cart.reduce((s, i) => s + getItemEffectiveUnitPrice(i) * i.quantity, 0);
-}
-
-function getBaseSubtotal() {
-  return cart.reduce((s, i) => s + i.price * i.quantity, 0);
-}
-
-/* ============================================
-   THEME
-   ============================================ */
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  const icon = document.getElementById('themeToggleIcon');
-  if (icon) {
-    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-  }
-}
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme') || 'light';
-  const next = current === 'dark' ? 'light' : 'dark';
-  try { localStorage.setItem('theme', next); } catch(e) {}
-  applyTheme(next);
-}
-
-/* ============================================
-   HELPERS
-   ============================================ */
 function makeUniqueId(productId, selection, extras) {
   const selId = selection ? selection.id : 'none';
   const extIds = (extras || []).map(m => m.id).sort().join(',');
@@ -2224,10 +2234,8 @@ function getMexicanTime() {
   const get = t => parts.find(p => p.type === t)?.value;
   let hour = parseInt(get('hour'));
   if (hour === 24) hour = 0;
-  const minute = parseInt(get('minute'));
-  return { weekday: get('weekday'), hour, minute, timeInMinutes: hour * 60 + minute };
+  return { weekday: get('weekday'), hour, minute: parseInt(get('minute')), timeInMinutes: hour * 60 + parseInt(get('minute')) };
 }
-
 function getOrderingStatus() {
   const t = getMexicanTime();
   const dow = DAY_SHORT[t.weekday];
@@ -2236,7 +2244,6 @@ function getOrderingStatus() {
   const isOpenTime = t.timeInMinutes >= todayHours.open && t.timeInMinutes < todayHours.close;
   return { ...t, dow, isOpen: isOpenTime, isOpenDay: true, isOpenTime, todayHours };
 }
-
 function formatHour(minutes) {
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
@@ -2244,7 +2251,6 @@ function formatHour(minutes) {
   const h12 = h % 12 === 0 ? 12 : h % 12;
   return `${h12}:${String(m).padStart(2,'0')} ${ampm}`;
 }
-
 function getNextOpenDayInfo() {
   const t = getMexicanTime();
   const todayDow = DAY_SHORT[t.weekday];
@@ -2254,46 +2260,37 @@ function getNextOpenDayInfo() {
   }
   return null;
 }
-
 function applyScheduleState() {
   scheduleState = getOrderingStatus();
   const banner = document.getElementById('scheduleBanner');
   const iconInner = document.getElementById('scheduleBannerIconInner');
   const title = document.getElementById('scheduleTitle');
   const subtitle = document.getElementById('scheduleSubtitle');
-
   banner.classList.remove('open', 'closed', 'limited');
-
   if (!scheduleState.isOpen) {
     banner.classList.add('closed');
     iconInner.className = 'fas fa-lock';
     if (!scheduleState.isOpenDay) {
       const next = getNextOpenDayInfo();
       title.textContent = `Cerrado — Hoy ${DAY_NAMES[scheduleState.dow]}`;
-      if (next) subtitle.textContent = `Abrimos ${DAY_NAMES[next.dow]} de ${formatHour(next.hours.open)} a ${formatHour(next.hours.close)}. Puedes programar tu pedido.`;
-      else subtitle.textContent = 'Puedes programar tu pedido para otra fecha.';
+      if (next) subtitle.textContent = `Abrimos ${DAY_NAMES[next.dow]} de ${formatHour(next.hours.open)} a ${formatHour(next.hours.close)}.`;
+      else subtitle.textContent = 'Puedes programar tu pedido.';
     } else if (scheduleState.timeInMinutes < scheduleState.todayHours.open) {
       title.textContent = `Aún cerrado — Abrimos a las ${formatHour(scheduleState.todayHours.open)}`;
-      subtitle.textContent = `Son las ${formatHour(scheduleState.timeInMinutes)}. Puedes programar tu pedido.`;
+      subtitle.textContent = `Son las ${formatHour(scheduleState.timeInMinutes)}. Puedes programar.`;
     } else {
       title.textContent = 'Cerrado por hoy — Programa tu pedido';
-      subtitle.textContent = `Son las ${formatHour(scheduleState.timeInMinutes)}. Hoy: ${formatHour(scheduleState.todayHours.open)} a ${formatHour(scheduleState.todayHours.close)}.`;
+      subtitle.textContent = `Hoy: ${formatHour(scheduleState.todayHours.open)} a ${formatHour(scheduleState.todayHours.close)}.`;
     }
   } else {
     banner.classList.add('open');
     iconInner.className = 'fas fa-check-circle';
-    title.textContent = 'Estamos abiertos';
+    title.textContent = '¡Estamos abiertos!';
     subtitle.textContent = `Son las ${formatHour(scheduleState.timeInMinutes)}. Hoy: ${formatHour(scheduleState.todayHours.open)} a ${formatHour(scheduleState.todayHours.close)}.`;
   }
-
-  if (lastScheduleStateIsOpen !== null && !lastScheduleStateIsOpen && scheduleState.isOpen && isScheduledOrder) {
-    showNotification('El restaurante ya está abierto.', 'info');
-  }
   lastScheduleStateIsOpen = scheduleState.isOpen;
-
   updateCheckoutButtonState();
   renderProducts();
-
   if (isScheduledOrder && document.getElementById('checkoutForm').style.display !== 'none') {
     refreshScheduleSelectorsPreservingSelection();
   }
@@ -2311,7 +2308,6 @@ function formatScheduleDateLabel(dateObj, offset) {
   if (offset === 1) return `Mañana ${dayName} ${dayNum} de ${monthName}`;
   return `${dayName.charAt(0).toUpperCase() + dayName.slice(1)} ${dayNum} de ${monthName}`;
 }
-
 function getValidTimeSlots(offset) {
   const now = new Date();
   const target = new Date(now);
@@ -2329,7 +2325,6 @@ function getValidTimeSlots(offset) {
   }
   return slots;
 }
-
 function getValidScheduleDates() {
   const now = new Date();
   const validDates = [];
@@ -2339,15 +2334,10 @@ function getValidScheduleDates() {
     const dow = d.getDay();
     if (!DAY_HOURS[dow]) continue;
     if (offset === 0 && getValidTimeSlots(0).length === 0) continue;
-    validDates.push({
-      offset, date: d,
-      label: formatScheduleDateLabel(d, offset),
-      dateStr: `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`
-    });
+    validDates.push({ offset, date: d, label: formatScheduleDateLabel(d, offset) });
   }
   return validDates;
 }
-
 function populateScheduleSelectors() {
   const dateSelect = document.getElementById('scheduleDate');
   const timeSelect = document.getElementById('scheduleTime');
@@ -2371,7 +2361,6 @@ function populateScheduleSelectors() {
   else dateSelect.value = validDates[0].offset;
   populateTimeSlots();
 }
-
 function populateTimeSlots() {
   const dateSelect = document.getElementById('scheduleDate');
   const timeSelect = document.getElementById('scheduleTime');
@@ -2399,7 +2388,6 @@ function populateTimeSlots() {
   if (prevTime && slots.includes(parseInt(prevTime))) timeSelect.value = prevTime;
   updateSchedulePreview();
 }
-
 function refreshScheduleSelectorsPreservingSelection() {
   const dateSelect = document.getElementById('scheduleDate');
   const timeSelect = document.getElementById('scheduleTime');
@@ -2411,10 +2399,9 @@ function refreshScheduleSelectorsPreservingSelection() {
     dateSelect.value = prevDate;
     populateTimeSlots();
     if (prevTime && Array.from(timeSelect.options).some(o => o.value === prevTime)) timeSelect.value = prevTime;
-    updateSchedulePreview();
   }
+  updateSchedulePreview();
 }
-
 function updateSchedulePreview() {
   const preview = document.getElementById('schedulePreview');
   const dateSelect = document.getElementById('scheduleDate');
@@ -2428,18 +2415,16 @@ function updateSchedulePreview() {
     updateFinalSummary();
     return;
   }
-  const dateLabel = dateOpt.textContent;
-  const timeLabel = formatHour(parseInt(timeVal));
   preview.innerHTML = `
-    <div class="schedule-preview-line"><i class="fas fa-calendar-check"></i> <strong>${dateLabel}</strong></div>
-    <div class="schedule-preview-line"><i class="fas fa-clock"></i> Hora: <strong>${timeLabel}</strong></div>
+    <div class="schedule-preview-line"><i class="fas fa-calendar-check"></i> <strong>${dateOpt.textContent}</strong></div>
+    <div class="schedule-preview-line"><i class="fas fa-clock"></i> Hora: <strong>${formatHour(parseInt(timeVal))}</strong></div>
   `;
   preview.classList.add('active');
   updateFinalSummary();
 }
 
 /* ============================================
-   MAKE WEBHOOK
+   MAKE
    ============================================ */
 function sendDataToMake(orderData) {
   if (!MAKE_WEBHOOK_URL || MAKE_WEBHOOK_URL === '') {
@@ -2460,10 +2445,6 @@ function sendDataToMake(orderData) {
    INIT
    ============================================ */
 document.addEventListener('DOMContentLoaded', function() {
-  applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
-  const themeBtn = document.getElementById('themeToggle');
-  if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
-
   scheduleState = getOrderingStatus();
   lastScheduleStateIsOpen = scheduleState.isOpen;
   renderProducts();
@@ -2493,7 +2474,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Delivery type
   document.querySelectorAll('input[name="deliveryType"]').forEach(radio => {
     radio.addEventListener('change', function() {
       deliveryType = this.value;
@@ -2512,7 +2492,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Packaging mode
   document.querySelectorAll('input[name="packagingMode"]').forEach(radio => {
     radio.addEventListener('change', function() {
       packagingMode = this.value;
@@ -2522,7 +2501,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Delivery for
   document.querySelectorAll('input[name="deliveryFor"]').forEach(radio => {
     radio.addEventListener('change', function() { setDeliveryFor(this.value); });
   });
@@ -2541,8 +2519,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('cancelCheckout').addEventListener('click', function() {
     isScheduledOrder = false;
     document.getElementById('checkoutForm').style.display = 'none';
-    document.getElementById('mainContent')?.style && (document.getElementById('mainContent').style.display = 'grid');
-    document.querySelector('.band-sky').style.display = 'block';
+    document.querySelector('.band-cream').style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
@@ -2578,41 +2555,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-/* ============================================
-   DELIVERY FOR
-   ============================================ */
 function setDeliveryFor(value) {
   if (deliveryFor === value) return;
   deliveryFor = value;
-  const forMeOption = document.getElementById('forMeOption');
-  const forOtherOption = document.getElementById('forOtherOption');
-  const otherHint = document.getElementById('otherPersonHint');
-  const useLocationBtn = document.getElementById('useCurrentLocationBtn');
-  const addressLabel = document.getElementById('addressInputLabel');
-  const addressInput = document.getElementById('addressInput');
-  const selectedLabel = document.getElementById('selectedAddressLabel');
-
-  forMeOption.classList.toggle('selected', value === 'me');
-  forOtherOption.classList.toggle('selected', value === 'other');
+  document.getElementById('forMeOption').classList.toggle('selected', value === 'me');
+  document.getElementById('forOtherOption').classList.toggle('selected', value === 'other');
   resetDeliveryLocation();
-
   if (value === 'other') {
-    otherHint.classList.add('active');
-    useLocationBtn.innerHTML = '<i class="fas fa-location-arrow"></i> Ubicación de quien recibe';
-    addressLabel.innerHTML = '<i class="fas fa-search"></i> Dirección de quien recibirá:';
-    addressInput.placeholder = 'Calle, número, colonia';
-    selectedLabel.textContent = 'Dirección de entrega:';
+    document.getElementById('otherPersonHint').classList.add('active');
+    document.getElementById('useCurrentLocationBtn').innerHTML = '<i class="fas fa-location-arrow"></i> Ubicación de quien recibe';
+    document.getElementById('addressInputLabel').innerHTML = '<i class="fas fa-search"></i> Dirección de quien recibirá:';
   } else {
-    otherHint.classList.remove('active');
-    useLocationBtn.innerHTML = '<i class="fas fa-location-arrow"></i> Usar mi ubicación actual';
-    addressLabel.innerHTML = '<i class="fas fa-search"></i> O ingresa la dirección:';
-    addressInput.placeholder = 'Calle, número, colonia';
-    selectedLabel.textContent = 'Dirección:';
+    document.getElementById('otherPersonHint').classList.remove('active');
+    document.getElementById('useCurrentLocationBtn').innerHTML = '<i class="fas fa-location-arrow"></i> Usar mi ubicación';
+    document.getElementById('addressInputLabel').innerHTML = '<i class="fas fa-search"></i> O ingresa la dirección:';
   }
 }
 
 /* ============================================
-   RENDER PRODUCTS
+   RENDER
    ============================================ */
 function renderProducts() {
   const grid = document.getElementById('productsGrid');
@@ -2620,7 +2581,7 @@ function renderProducts() {
   grid.innerHTML = '';
   const filtered = currentCategory === 'all' ? products : products.filter(p => p.category === currentCategory);
   if (filtered.length === 0) {
-    grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px; font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">Sin productos</p>';
+    grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:40px; font-family:var(--font-display); text-transform:uppercase;">Sin productos</p>';
     return;
   }
   filtered.forEach(product => {
@@ -2628,22 +2589,17 @@ function renderProducts() {
     const hasMods = productHasModifiers(product);
     let controlsHTML = '';
     if (hasMods) {
-      controlsHTML = `
-        <button type="button" class="add-to-cart ${totalQty > 0 ? 'in-cart' : ''}" data-action="open-modal">
-          <i class="fas fa-${totalQty > 0 ? 'check' : 'cart-plus'}"></i>
-          ${totalQty > 0 ? `Ver (${totalQty})` : 'Personalizar'}
-        </button>`;
+      controlsHTML = `<button type="button" class="add-to-cart ${totalQty > 0 ? 'in-cart' : ''}" data-action="open-modal">
+        <i class="fas fa-${totalQty > 0 ? 'check' : 'cart-plus'}"></i>
+        ${totalQty > 0 ? `Ver (${totalQty})` : 'Personalizar'}
+      </button>`;
     } else {
       if (totalQty > 0) {
-        controlsHTML = `
-          <button type="button" class="quantity-btn" data-action="dec"><i class="fas fa-minus"></i></button>
+        controlsHTML = `<button type="button" class="quantity-btn" data-action="dec"><i class="fas fa-minus"></i></button>
           <div class="quantity-display">${totalQty}</div>
           <button type="button" class="quantity-btn" data-action="inc"><i class="fas fa-plus"></i></button>`;
       } else {
-        controlsHTML = `
-          <button type="button" class="add-to-cart" data-action="inc">
-            <i class="fas fa-cart-plus"></i> Añadir
-          </button>`;
+        controlsHTML = `<button type="button" class="add-to-cart" data-action="inc"><i class="fas fa-cart-plus"></i> Añadir</button>`;
       }
     }
 
@@ -2651,7 +2607,7 @@ function renderProducts() {
     card.className = 'product-card';
     card.innerHTML = `
       ${hasMods ? '<div class="customizable-badge"><i class="fas fa-sliders-h"></i> Opciones</div>' : ''}
-      <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Imagen'">
+      <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/FFD400/0d0d0d?text=Pipiris'">
       <div class="product-info">
         <h3 class="product-title">${product.name}</h3>
         <p class="product-desc">${product.description}</p>
@@ -2660,7 +2616,6 @@ function renderProducts() {
           <div class="product-quantity-controls">${controlsHTML}</div>
         </div>
       </div>`;
-
     card.addEventListener('click', function(e) {
       if (!e.target.closest('button')) openProductModal(product.id);
     });
@@ -2672,15 +2627,12 @@ function renderProducts() {
         else if (action === 'inc') {
           if (hasMods) openProductModal(product.id);
           else adjustSimpleProductQuantity(product.id, 1);
-        } else if (action === 'dec') {
-          adjustSimpleProductQuantity(product.id, -1);
-        }
+        } else if (action === 'dec') adjustSimpleProductQuantity(product.id, -1);
       });
     });
     grid.appendChild(card);
   });
 }
-
 function adjustSimpleProductQuantity(productId, change) {
   const product = products.find(p => p.id === productId);
   if (!product) return;
@@ -2698,9 +2650,6 @@ function adjustSimpleProductQuantity(productId, change) {
   refreshAll();
 }
 
-/* ============================================
-   PRODUCT MODAL
-   ============================================ */
 function openProductModal(productId) {
   const product = products.find(p => p.id === productId);
   if (!product) return;
@@ -2708,13 +2657,10 @@ function openProductModal(productId) {
   modalQuantity = 1;
   selectedSelection = null;
   selectedExtras = [];
-
   document.getElementById('modalProductImage').src = product.image;
-  document.getElementById('modalProductImage').alt = product.name;
   document.getElementById('modalProductTitle').textContent = product.name;
   document.getElementById('modalProductDesc').textContent = product.description;
   document.getElementById('modalProductPrice').textContent = `$${product.price.toFixed(2)}`;
-
   updateModalQuantity();
   loadModifiers(product.modifiers);
   calculateModalTotal();
@@ -2722,29 +2668,24 @@ function openProductModal(productId) {
   document.getElementById('productModal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
-
 function closeProductModal() {
   document.getElementById('productModal').classList.remove('active');
   document.body.style.overflow = '';
 }
-
 function loadModifiers(modifiers) {
   const list = document.getElementById('modifiersList');
   list.innerHTML = '';
   const hasSelection = modifiers.selection && modifiers.selection.length > 0;
   const hasExtras = modifiers.extras && modifiers.extras.length > 0;
-
   if (!hasSelection && !hasExtras) {
-    list.innerHTML = '<p style="text-align:center; padding:10px; font-family:var(--font-body); font-size:12px; text-transform:uppercase; opacity:0.6;">Sin opciones</p>';
+    list.innerHTML = '<p style="text-align:center; padding:10px; font-family:var(--font-display); font-size:12px; text-transform:uppercase; opacity:0.6;">Sin opciones</p>';
     return;
   }
-
   if (hasSelection) {
     const group = document.createElement('div');
     let title = 'Elige una opción';
     if (currentModalProduct.category === 'postres') title = 'Elige topping';
     else if (currentModalProduct.category === 'malteadas') title = 'Elige sabor';
-    else if (currentModalProduct.category === 'bebidas') title = 'Elige opción';
     group.innerHTML = `<div class="modifiers-title">${title}</div>`;
     modifiers.selection.forEach(mod => {
       const opt = document.createElement('div');
@@ -2768,7 +2709,6 @@ function loadModifiers(modifiers) {
     });
     list.appendChild(group);
   }
-
   if (hasExtras) {
     const group = document.createElement('div');
     group.innerHTML = '<div class="modifiers-title" style="margin-top:15px;">Extras</div>';
@@ -2796,12 +2736,10 @@ function loadModifiers(modifiers) {
     list.appendChild(group);
   }
 }
-
 function updateModalQuantity() {
   document.getElementById('modalQuantityDisplay').textContent = modalQuantity;
   document.getElementById('modalDecreaseBtn').disabled = modalQuantity <= 1;
 }
-
 function calculateModalTotal() {
   if (!currentModalProduct) return;
   let total = currentModalProduct.price;
@@ -2810,7 +2748,6 @@ function calculateModalTotal() {
   total *= modalQuantity;
   document.getElementById('modalTotalPrice').textContent = `$${total.toFixed(2)}`;
 }
-
 function addToCartFromModal() {
   if (!currentModalProduct) return;
   const needsSelection = currentModalProduct.modifiers.selection && currentModalProduct.modifiers.selection.length > 0;
@@ -2861,7 +2798,6 @@ function updateCartDisplay() {
     clearCartBtn.style.display = 'none';
   }
 
-  const baseSubtotal = getBaseSubtotal();
   const packagingTotal = getPackagingTotal();
   const subtotal = getCartSubtotal();
   const total = subtotal + currentShippingCost;
@@ -2870,20 +2806,15 @@ function updateCartDisplay() {
   shippingCostElement.textContent = `$${currentShippingCost.toFixed(2)}`;
   totalElement.textContent = `$${total.toFixed(2)}`;
 
-  // Packaging row
   if (deliveryType === 'pickup' && totalItems > 0 && packagingTotal !== 0) {
     packagingRow.style.display = 'flex';
-    if (packagingMode === 'takeaway') {
-      packagingLabel.textContent = `Empaque (${totalItems}×$${PACKAGING_TAKEAWAY})`;
-    } else {
-      packagingLabel.textContent = `Comer aquí (${totalItems}×-$${Math.abs(PACKAGING_DINEIN)})`;
-    }
+    if (packagingMode === 'takeaway') packagingLabel.textContent = `Empaque (${totalItems}×$${PACKAGING_TAKEAWAY})`;
+    else packagingLabel.textContent = `Comer aquí (${totalItems}×-$${Math.abs(PACKAGING_DINEIN)})`;
     packagingCostEl.textContent = `$${packagingTotal.toFixed(2)}`;
   } else {
     packagingRow.style.display = 'none';
   }
 
-  // Shipping row
   shippingRow.style.display = (deliveryType === 'delivery' && currentShippingCost > 0) ? 'flex' : 'none';
 
   updateCheckoutButtonState();
@@ -2892,7 +2823,7 @@ function updateCartDisplay() {
     cartItemsContainer.innerHTML = `
       <div class="cart-empty">
         <i class="fas fa-shopping-basket"></i>
-        <p>Tu canasta está vacía</p>
+        <p>Canasta vacía</p>
       </div>`;
   } else {
     cartItemsContainer.innerHTML = '';
@@ -2972,7 +2903,6 @@ async function useCurrentLocation() {
   const originalText = btn.innerHTML;
   btn.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Obteniendo...';
   document.getElementById('autoCalculatingStatus').classList.add('active');
-
   navigator.geolocation.getCurrentPosition(
     async function(position) {
       const lat = position.coords.latitude, lng = position.coords.longitude;
@@ -2991,9 +2921,7 @@ async function useCurrentLocation() {
       btn.innerHTML = originalText;
     },
     function(error) {
-      let msg = 'No se pudo obtener ubicación';
-      if (error.code === 1) msg = 'Permiso denegado';
-      showNotification(msg, 'error');
+      showNotification('No se pudo obtener ubicación', 'error');
       document.getElementById('autoCalculatingStatus').classList.remove('active');
       btn.disabled = false;
       btn.innerHTML = originalText;
@@ -3001,7 +2929,6 @@ async function useCurrentLocation() {
     { enableHighAccuracy: true, timeout: 12000, maximumAge: 0 }
   );
 }
-
 async function searchAddress() {
   const input = document.getElementById('addressInput');
   const address = input.value.trim();
@@ -3032,13 +2959,11 @@ async function searchAddress() {
     btn.innerHTML = '<i class="fas fa-search"></i>';
   }
 }
-
 function showSelectedAddress(address) {
   document.getElementById('deliveryAddressText').textContent = address;
   document.getElementById('selectedAddressBox').classList.add('active');
   document.getElementById('locationDetailsBlock').style.display = 'block';
 }
-
 async function calculateDistanceAndCost() {
   if (!deliveryCoords) return;
   document.getElementById('autoCalculatingStatus').classList.add('active');
@@ -3063,18 +2988,14 @@ async function calculateDistanceAndCost() {
   updateShippingUI();
   document.getElementById('autoCalculatingStatus').classList.remove('active');
 }
-
 function haversineKm(a, b) {
   const R = 6371;
   const toRad = deg => deg * Math.PI / 180;
   const dLat = toRad(b.lat - a.lat);
   const dLon = toRad(b.lng - a.lng);
-  const lat1 = toRad(a.lat);
-  const lat2 = toRad(b.lat);
-  const h = Math.sin(dLat/2)**2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLon/2)**2;
+  const h = Math.sin(dLat/2)**2 + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLon/2)**2;
   return R * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1-h));
 }
-
 function calculateShippingCost() {
   if (deliveryDistance <= 5) deliveryZone = "Zona Cercana";
   else if (deliveryDistance <= 10) deliveryZone = "Zona Media";
@@ -3090,15 +3011,12 @@ function calculateShippingCost() {
   currentShippingCost = cost;
   updateCartDisplay();
 }
-
 function updateShippingUI() {
   if (deliveryDistance > 0 && deliveryDistance <= shippingRates.maxDistance) {
     document.getElementById('distanceText').textContent = `${deliveryDistance.toFixed(1)} km`;
     document.getElementById('timeText').textContent = `${deliveryTime} min`;
     document.getElementById('calculatedShippingCost').textContent = `$${currentShippingCost.toFixed(2)}`;
     document.getElementById('distanceDetails').classList.add('active');
-  } else if (deliveryDistance > shippingRates.maxDistance) {
-    document.getElementById('distanceDetails').classList.remove('active');
   }
 }
 
@@ -3114,7 +3032,6 @@ function selectPaymentMethod(method) {
   if (method === 'cash') calculateChange();
   else document.getElementById('changeInfo').classList.remove('active');
 }
-
 function calculateChange() {
   const subtotal = getCartSubtotal();
   const total = subtotal + currentShippingCost;
@@ -3125,10 +3042,8 @@ function calculateChange() {
     changeInfo.classList.add('active');
   } else changeInfo.classList.remove('active');
 }
-
 function validatePayment() {
-  const subtotal = getCartSubtotal();
-  const total = subtotal + currentShippingCost;
+  const total = getCartSubtotal() + currentShippingCost;
   if (paymentMethod === 'cash') {
     const cash = parseFloat(document.getElementById('cashAmount').value) || 0;
     if (cash === 0) { showNotification('Ingresa monto', 'error'); return false; }
@@ -3136,28 +3051,25 @@ function validatePayment() {
   }
   return true;
 }
-
 function validateOrderForm() {
   const name = document.getElementById('customerName').value.trim();
   const phone = document.getElementById('customerPhone').value.trim();
-  const deliveryTypeFinal = document.getElementById('deliveryTypeFinal').value;
+  const dtFinal = document.getElementById('deliveryTypeFinal').value;
   if (!name) { showNotification('Ingresa nombre', 'error'); return false; }
   if (!phone || phone.replace(/\D/g,'').length < 10) { showNotification('Teléfono inválido', 'error'); return false; }
-
   if (isScheduledOrder) {
-    const dateSelect = document.getElementById('scheduleDate');
-    const timeSelect = document.getElementById('scheduleTime');
-    if (!dateSelect.value || !timeSelect.value) { showNotification('Selecciona fecha y hora', 'error'); return false; }
+    if (!document.getElementById('scheduleDate').value || !document.getElementById('scheduleTime').value) {
+      showNotification('Selecciona fecha y hora', 'error'); return false;
+    }
   } else if (!scheduleState.isOpen) {
     showNotification('Restaurante cerrado', 'error'); return false;
   }
-
-  if (deliveryTypeFinal === 'delivery') {
+  if (dtFinal === 'delivery') {
     const addr = document.getElementById('customerAddress').value.trim();
     const details = document.getElementById('customerDetails').value.trim();
     if (!addr) { showNotification('Falta dirección', 'error'); return false; }
     if (!deliveryCoords) { showNotification('Selecciona ubicación', 'error'); return false; }
-    if (currentShippingCost === 0) { showNotification('Calcula envío primero', 'error'); return false; }
+    if (currentShippingCost === 0) { showNotification('Calcula envío', 'error'); return false; }
     if (deliveryDistance > shippingRates.maxDistance) { showNotification('Excede 15 km', 'error'); return false; }
     if (!details || details.length < 5) { showNotification('Agrega detalles', 'error'); return false; }
     if (getBaseSubtotal() < shippingRates.minOrderForDelivery) { showNotification(`Mínimo $${shippingRates.minOrderForDelivery}`, 'error'); return false; }
@@ -3171,10 +3083,9 @@ function validateOrderForm() {
 function handleCheckout() {
   if (cart.length === 0) { showNotification('Carrito vacío', 'error'); return; }
   isScheduledOrder = !scheduleState.isOpen;
-
-  const deliveryTypeFinal = document.getElementById('deliveryTypeFinal');
-  const finalAddressSection = document.getElementById('finalAddressSection');
-  const finalDetailsSection = document.getElementById('finalDetailsSection');
+  const dtFinal = document.getElementById('deliveryTypeFinal');
+  const finalAddr = document.getElementById('finalAddressSection');
+  const finalDetails = document.getElementById('finalDetailsSection');
   const scheduleSection = document.getElementById('scheduleSection');
   const checkoutFormTitle = document.getElementById('checkoutFormTitle');
   const submitBtn = document.getElementById('submitOrderBtn');
@@ -3183,17 +3094,17 @@ function handleCheckout() {
     if (!deliveryCoords || currentShippingCost === 0) { showNotification('Selecciona ubicación', 'error'); return; }
     if (deliveryDistance > shippingRates.maxDistance) { showNotification('Excede 15 km', 'error'); return; }
     const details = document.getElementById('locationDetails').value.trim();
-    if (!details || details.length < 5) { showNotification('Agrega detalles de ubicación', 'error'); return; }
+    if (!details || details.length < 5) { showNotification('Agrega detalles', 'error'); return; }
     if (getBaseSubtotal() < shippingRates.minOrderForDelivery) { showNotification(`Mínimo $${shippingRates.minOrderForDelivery}`, 'error'); return; }
-    deliveryTypeFinal.value = 'delivery';
-    finalAddressSection.style.display = 'block';
-    finalDetailsSection.style.display = 'block';
+    dtFinal.value = 'delivery';
+    finalAddr.style.display = 'block';
+    finalDetails.style.display = 'block';
     document.getElementById('customerAddress').value = deliveryAddress;
     document.getElementById('customerDetails').value = details;
   } else {
-    deliveryTypeFinal.value = 'pickup';
-    finalAddressSection.style.display = 'none';
-    finalDetailsSection.style.display = 'none';
+    dtFinal.value = 'pickup';
+    finalAddr.style.display = 'none';
+    finalDetails.style.display = 'none';
   }
 
   if (isScheduledOrder) {
@@ -3208,12 +3119,11 @@ function handleCheckout() {
   }
 
   selectPaymentMethod('card');
-  document.querySelector('.band-sky').style.display = 'none';
+  document.querySelector('.band-cream').style.display = 'none';
   document.getElementById('checkoutForm').style.display = 'block';
   updateFinalSummary();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 function updateFinalSummary() {
   const el = document.getElementById('orderSummaryFinal');
   if (!el) return;
@@ -3229,7 +3139,7 @@ function updateFinalSummary() {
     if (dateSelect && timeSelect && dateSelect.value && timeSelect.value) {
       const dateLabel = dateSelect.options[dateSelect.selectedIndex]?.textContent || '';
       const timeLabel = formatHour(parseInt(timeSelect.value));
-      html += `<div style="background:var(--sunburst); border:var(--border); border-radius:var(--radius-sm); padding:10px; margin-bottom:12px; text-align:center; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;">
+      html += `<div style="background:var(--yellow); border:var(--border); border-radius:var(--radius-md); padding:12px; margin-bottom:12px; text-align:center; font-family:var(--font-display); font-size:13px; text-transform:uppercase; letter-spacing:0.04em;">
         <i class="fas fa-calendar-check"></i> ${dateLabel} · ${timeLabel}
       </div>`;
     }
@@ -3245,13 +3155,13 @@ function updateFinalSummary() {
     </div>`;
   });
   if (packagingTotal !== 0 && deliveryType === 'pickup') {
-    html += `<div style="display:flex; justify-content:space-between; margin-bottom:6px; opacity:0.75; font-size:12px;">
+    html += `<div style="display:flex; justify-content:space-between; margin-bottom:6px; opacity:0.75; font-size:12.5px;">
       <span>${packagingMode === 'takeaway' ? 'Empaque' : 'Comer aquí'}</span>
       <span>$${packagingTotal.toFixed(2)}</span>
     </div>`;
   }
-  html += `<div style="display:flex; justify-content:space-between; border-top:var(--border); padding-top:10px; margin-top:10px; font-weight:700; text-transform:uppercase;">
-    <span>TOTAL</span><span style="font-family:var(--font-display); font-size:22px;">$${total.toFixed(2)}</span>
+  html += `<div style="display:flex; justify-content:space-between; border-top:2px dashed var(--black); padding-top:10px; margin-top:10px; font-weight:800; text-transform:uppercase;">
+    <span>TOTAL</span><span style="font-family:var(--font-display); font-size:24px; color:var(--red);">$${total.toFixed(2)}</span>
   </div>`;
   el.innerHTML = html;
 }
@@ -3262,23 +3172,21 @@ function updateFinalSummary() {
 function sendOrderToWhatsApp() {
   const customerName = document.getElementById('customerName').value.trim();
   const customerPhone = document.getElementById('customerPhone').value.trim();
-  const deliveryTypeFinal = document.getElementById('deliveryTypeFinal').value;
+  const dtFinal = document.getElementById('deliveryTypeFinal').value;
   const customerNotes = document.getElementById('customerNotes').value.trim();
-
   let customerAddress = '', customerDetails = '';
-  if (deliveryTypeFinal === 'delivery') {
+  if (dtFinal === 'delivery') {
     customerAddress = document.getElementById('customerAddress').value.trim();
     customerDetails = document.getElementById('customerDetails').value.trim();
   }
-
   const subtotal = getCartSubtotal();
   const total = subtotal + currentShippingCost;
   const packagingTotal = getPackagingTotal();
-  const packagingText = deliveryTypeFinal === 'pickup'
+  const packagingText = dtFinal === 'pickup'
     ? (packagingMode === 'takeaway' ? `Para llevar (+$${PACKAGING_TAKEAWAY} c/u)` : `Comer aquí (-$${Math.abs(PACKAGING_DINEIN)} c/u)`)
     : 'Envío';
 
-  const paymentText = paymentMethod === 'cash' ? 'Efectivo' : 'Tarjeta (Terminal)';
+  const paymentText = paymentMethod === 'cash' ? 'Efectivo' : 'Tarjeta';
   let paymentDetails = '';
   if (paymentMethod === 'cash') {
     const cash = parseFloat(document.getElementById('cashAmount').value) || 0;
@@ -3294,28 +3202,22 @@ function sendOrderToWhatsApp() {
     scheduledDateLabel = dateSelect.options[dateSelect.selectedIndex].textContent;
     scheduledTimeLabel = formatHour(parseInt(timeSelect.value));
     msg += `*NUEVO PEDIDO PROGRAMADO — Pipiris Fries*%0A%0A`;
-    msg += `🗓 *PROGRAMADO PARA:*%0A*Fecha:* ${scheduledDateLabel}%0A*Hora:* ${scheduledTimeLabel}%0A%0A`;
+    msg += `🗓 *PROGRAMADO:*%0A*Fecha:* ${scheduledDateLabel}%0A*Hora:* ${scheduledTimeLabel}%0A%0A`;
   } else {
     msg += `*NUEVO PEDIDO — Pipiris Fries*%0A%0A`;
   }
-
   msg += `*Cliente:* ${customerName}%0A*Teléfono:* ${customerPhone}%0A`;
-  msg += `*Tipo:* ${deliveryTypeFinal === 'delivery' ? 'Envío a domicilio' : 'Recoger en local'}%0A`;
+  msg += `*Tipo:* ${dtFinal === 'delivery' ? 'Envío a domicilio' : 'Recoger en local'}%0A`;
   msg += `*Modo:* ${packagingText}%0A`;
-
-  if (deliveryTypeFinal === 'delivery') {
-    msg += `*Pedido para:* ${deliveryFor === 'other' ? 'OTRA PERSONA' : 'Cliente'}%0A`;
+  if (dtFinal === 'delivery') {
+    msg += `*Para:* ${deliveryFor === 'other' ? 'OTRA PERSONA' : 'Cliente'}%0A`;
     msg += `*Dirección:* ${customerAddress}%0A*Detalles:* ${customerDetails}%0A`;
-    if (deliveryCoords) {
-      msg += `*Mapa:* https://www.google.com/maps?q=${deliveryCoords.lat},${deliveryCoords.lng}%0A`;
-    }
+    if (deliveryCoords) msg += `*Mapa:* https://www.google.com/maps?q=${deliveryCoords.lat},${deliveryCoords.lng}%0A`;
     msg += `*Distancia:* ${deliveryDistance.toFixed(1)} km (${deliveryZone})%0A*Envío:* $${currentShippingCost.toFixed(2)}%0A`;
   }
-
   msg += `*Pago:* ${paymentText}%0A`;
   if (paymentDetails) msg += paymentDetails;
   if (customerNotes) msg += `*Notas:* ${customerNotes}%0A`;
-
   msg += `%0A*DETALLE:*%0A`;
   cart.forEach(item => {
     const unit = getItemEffectiveUnitPrice(item);
@@ -3326,15 +3228,13 @@ function sendOrderToWhatsApp() {
     if (mods.length) msg += `%0A   _${mods.join(', ')}_`;
     msg += `%0A`;
   });
-
-  if (packagingTotal !== 0 && deliveryTypeFinal === 'pickup') {
+  if (packagingTotal !== 0 && dtFinal === 'pickup') {
     msg += `%0A*${packagingMode === 'takeaway' ? 'Empaque' : 'Comer aquí'}:* $${packagingTotal.toFixed(2)}%0A`;
   }
-  if (deliveryTypeFinal === 'delivery') msg += `*Envío:* $${currentShippingCost.toFixed(2)}%0A`;
+  if (dtFinal === 'delivery') msg += `*Envío:* $${currentShippingCost.toFixed(2)}%0A`;
   msg += `*TOTAL:* $${total.toFixed(2)}%0A%0A`;
   msg += `_Enviado: ${new Date().toLocaleString('es-MX')}_`;
 
-  // Make.com
   try {
     const pedidoDetalle = cart.map(item => {
       let mods = [];
@@ -3344,10 +3244,8 @@ function sendOrderToWhatsApp() {
       const unit = getItemEffectiveUnitPrice(item);
       return `${item.quantity}x ${item.name}${modsStr} - $${(unit * item.quantity).toFixed(2)}`;
     }).join('\n');
-
     const cashAmountVal = paymentMethod === 'cash' ? (parseFloat(document.getElementById('cashAmount').value) || 0) : 0;
     const cambioVal = paymentMethod === 'cash' ? (cashAmountVal - total) : 0;
-
     const orderData = {
       origen: 'pipiris-fries',
       pedido_id: 'PIP-' + Date.now().toString().slice(-8),
@@ -3358,7 +3256,7 @@ function sendOrderToWhatsApp() {
       cliente_nombre: customerName,
       cliente_telefono: customerPhone,
       notas: customerNotes,
-      tipo_entrega: deliveryTypeFinal,
+      tipo_entrega: dtFinal,
       modo_consumo: packagingText,
       pedido_para: deliveryFor,
       direccion: customerAddress,
@@ -3384,7 +3282,6 @@ function sendOrderToWhatsApp() {
     sendDataToMake(orderData);
   } catch (err) { console.warn('Error Make:', err); }
 
-  // WhatsApp
   const url = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${msg}`;
   window.open(url, '_blank');
 
@@ -3400,25 +3297,19 @@ function sendOrderToWhatsApp() {
   }
   document.getElementById('confirmationModal').classList.add('active');
 
-  // Reset
   cart = [];
   isScheduledOrder = false;
   saveCart();
   document.getElementById('orderForm').reset();
   document.getElementById('checkoutForm').style.display = 'none';
-  document.querySelector('.band-sky').style.display = 'block';
+  document.querySelector('.band-cream').style.display = 'block';
   document.getElementById('deliveryAddressSection').style.display = 'none';
   document.getElementById('scheduleSection').style.display = 'none';
   document.getElementById('packagingSection').style.display = 'block';
-  deliveryCoords = null;
-  deliveryAddress = '';
-  deliveryDistance = 0;
-  deliveryTime = 0;
-  currentShippingCost = 0;
-  deliveryZone = '';
-  deliveryType = 'pickup';
-  packagingMode = 'takeaway';
-  deliveryFor = 'me';
+  deliveryCoords = null; deliveryAddress = '';
+  deliveryDistance = 0; deliveryTime = 0;
+  currentShippingCost = 0; deliveryZone = '';
+  deliveryType = 'pickup'; packagingMode = 'takeaway'; deliveryFor = 'me';
   document.querySelector('input[name="deliveryType"][value="pickup"]').checked = true;
   document.querySelector('input[name="packagingMode"][value="takeaway"]').checked = true;
   document.querySelector('input[name="deliveryFor"][value="me"]').checked = true;
