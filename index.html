@@ -925,6 +925,76 @@ h1, h2, h3, h4 {
 .for-whom-pill.selected { background: var(--yellow); }
 .for-whom-pill input { display: none; }
 
+/* ============================================
+   DELIVERY SAFETY (Otra persona)
+   ============================================ */
+.delivery-warning {
+  background: var(--red);
+  color: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-offset-sm);
+  animation: fadeInWarning 0.3s ease;
+}
+@keyframes fadeInWarning {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.delivery-warning i {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--white);
+}
+.delivery-warning strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+.delivery-warning p {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.delivery-warning p + p { margin-top: 6px; }
+.delivery-warning b { font-weight: 800; text-decoration: underline; }
+
+.addr-verify {
+  background: var(--yellow-light);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin: 10px 0 12px;
+  box-shadow: var(--shadow-offset-sm);
+}
+.addr-verify-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0d0d0d;
+  line-height: 1.4;
+}
+.addr-verify-check input {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--red);
+  cursor: pointer;
+}
+.addr-verify-check span { flex: 1; }
+
 /* Sticky "Continuar" button at bottom of cart screen */
 .sticky-continue {
   position: fixed;
@@ -1791,10 +1861,14 @@ h1, h2, h3, h4 {
 :root[data-theme="dark"] .app-header { background: #000; }
 :root[data-theme="dark"] .menu-hero { background: #000; }
 
-/* Dark theme: superficies amarillas → tinta oscura fija */
+/* ══════════════════════════════════════════════
+   CONTRASTE EN MODO OSCURO
+   Todas las superficies amarillas fuerzan tinta oscura fija.
+   ══════════════════════════════════════════════ */
+
+/* Amarillo sólido → texto negro fijo */
 :root[data-theme="dark"] .hero-info-pill,
-:root[data-theme="dark"] .hero-info-pill.white,
-:root[data-theme="dark"] .schedule-banner .banner-icon,
+:root[data-theme="dark"] .schedule-banner .banner-icon:not(.closed *),
 :root[data-theme="dark"] .row-add-btn,
 :root[data-theme="dark"] .mod-option.selected,
 :root[data-theme="dark"] .sheet-qty-btn,
@@ -1813,12 +1887,28 @@ h1, h2, h3, h4 {
 :root[data-theme="dark"] .cart-screen-empty .empty-icon,
 :root[data-theme="dark"] .reservation-notice,
 :root[data-theme="dark"] .toast.success,
-:root[data-theme="dark"] .history-item-type {
+:root[data-theme="dark"] .history-item-type,
+:root[data-theme="dark"] .theme-switch {
   color: #0d0d0d;
 }
 
+/* Amarillo claro (yellow-light) → texto negro fijo */
+:root[data-theme="dark"] .distance-mini,
+:root[data-theme="dark"] .selected-addr-box,
+:root[data-theme="dark"] .calc-status,
+:root[data-theme="dark"] .schedule-block,
+:root[data-theme="dark"] .addr-verify,
+:root[data-theme="dark"] .addr-verify-check,
+:root[data-theme="dark"] .cart-screen .form-control:focus,
+:root[data-theme="dark"] .co-input:focus,
+:root[data-theme="dark"] .co-select:focus,
+:root[data-theme="dark"] .co-textarea:focus,
+:root[data-theme="dark"] .cart-add-more:active {
+  color: #0d0d0d;
+}
+
+/* Bordes oscuros en superficies amarillas */
 :root[data-theme="dark"] .hero-info-pill,
-:root[data-theme="dark"] .hero-info-pill.white,
 :root[data-theme="dark"] .schedule-banner .banner-icon,
 :root[data-theme="dark"] .row-add-btn,
 :root[data-theme="dark"] .mod-option.selected,
@@ -1839,10 +1929,16 @@ h1, h2, h3, h4 {
 :root[data-theme="dark"] .reservation-notice,
 :root[data-theme="dark"] .cart-screen-empty .empty-icon,
 :root[data-theme="dark"] .toast.success,
-:root[data-theme="dark"] .history-item-type {
+:root[data-theme="dark"] .history-item-type,
+:root[data-theme="dark"] .distance-mini,
+:root[data-theme="dark"] .selected-addr-box,
+:root[data-theme="dark"] .calc-status,
+:root[data-theme="dark"] .schedule-block,
+:root[data-theme="dark"] .addr-verify {
   border-color: #0d0d0d;
 }
 
+/* Sombras oscuras */
 :root[data-theme="dark"] .row-add-btn,
 :root[data-theme="dark"] .cart-summary-block,
 :root[data-theme="dark"] .final-summary,
@@ -1850,24 +1946,22 @@ h1, h2, h3, h4 {
 :root[data-theme="dark"] .confirm-check,
 :root[data-theme="dark"] .confirm-close,
 :root[data-theme="dark"] .reservation-notice,
-:root[data-theme="dark"] .cart-screen-empty .empty-icon {
+:root[data-theme="dark"] .cart-screen-empty .empty-icon,
+:root[data-theme="dark"] .addr-verify,
+:root[data-theme="dark"] .schedule-block,
+:root[data-theme="dark"] .distance-mini,
+:root[data-theme="dark"] .selected-addr-box,
+:root[data-theme="dark"] .calc-status {
   box-shadow: 3px 3px 0 #0d0d0d;
 }
 
+/* Interruptores (bolita oscura) */
 :root[data-theme="dark"] .theme-switch::after,
 :root[data-theme="dark"] .mod-toggle::after {
   background: #0d0d0d;
 }
 
-/* Cat pills activas + sticky continue: fondo negro fijo + texto amarillo */
-:root[data-theme="dark"] .cat-pill.active,
-:root[data-theme="dark"] .sticky-continue {
-  background: #0d0d0d;
-  color: var(--yellow);
-  border-color: #0d0d0d;
-}
-
-/* Toast */
+/* Toast oscuro base */
 :root[data-theme="dark"] .toast {
   background: #000;
   color: var(--yellow);
@@ -1884,7 +1978,18 @@ h1, h2, h3, h4 {
   border-color: #0d0d0d;
 }
 
-/* Números de total: mantener tinta oscura sobre amarillo */
+/* Cat pills activas + sticky continue: fondo negro + texto amarillo */
+:root[data-theme="dark"] .cat-pill.active,
+:root[data-theme="dark"] .sticky-continue {
+  background: #0d0d0d;
+  color: var(--yellow);
+  border-color: #0d0d0d;
+}
+:root[data-theme="dark"] .sticky-continue {
+  box-shadow: 4px 4px 0 #0d0d0d;
+}
+
+/* Números y precios con contorno: tinta oscura fija */
 :root[data-theme="dark"] .summary-row.total span:last-child,
 :root[data-theme="dark"] .final-summary .fs-total span:last-child,
 :root[data-theme="dark"] .cart-line-price,
@@ -1894,6 +1999,19 @@ h1, h2, h3, h4 {
 :root[data-theme="dark"] .mod-option-price,
 :root[data-theme="dark"] .mod-extra-price {
   -webkit-text-stroke-color: #0d0d0d;
+}
+
+/* Delivery warning: mantiene blanco sobre rojo en ambos temas */
+:root[data-theme="dark"] .delivery-warning {
+  background: var(--red);
+  color: var(--white);
+  border-color: #0d0d0d;
+  box-shadow: 3px 3px 0 #0d0d0d;
+}
+:root[data-theme="dark"] .delivery-warning i,
+:root[data-theme="dark"] .delivery-warning strong,
+:root[data-theme="dark"] .delivery-warning p {
+  color: var(--white);
 }
 
 /* Responsive */
@@ -2328,6 +2446,11 @@ let deliveryFor = 'me';
 let deliveryType = 'pickup'; // 'pickup' | 'delivery' | 'dine-in'
 let isScheduledOrder = false;
 let scheduleState = { isOpen: false, isOpenDay: false, todayHours: null, dow: 1 };
+
+/* Recipient state (cuando deliveryFor === 'other') */
+let deliveryRecipientName = '';
+let deliveryRecipientPhone = '';
+let addrVerified = false;
 
 /* Sheet state */
 let currentSheetProduct = null;
@@ -2800,6 +2923,14 @@ function renderCartScreen() {
   const inner = document.getElementById('cartScreenInner');
   if (!inner) return;
 
+  // Preservar campos del receptor antes de re-renderizar
+  const rn = document.getElementById('recipientNameInput');
+  const rp = document.getElementById('recipientPhoneInput');
+  const av = document.getElementById('addrVerified');
+  if (rn) deliveryRecipientName = rn.value;
+  if (rp) deliveryRecipientPhone = rp.value;
+  if (av) addrVerified = av.checked;
+
   if (cart.length === 0) {
     inner.innerHTML = `
       <div class="cart-screen-empty">
@@ -2892,8 +3023,32 @@ function renderCartScreen() {
           <input type="radio" name="dFor" value="other" ${deliveryFor === 'other' ? 'checked' : ''}>
           <i class="fas fa-user-friends"></i> Otra persona
         </label>
-      </div>
+      </div>`;
 
+    // Bloque de seguridad para "otra persona"
+    if (deliveryFor === 'other') {
+      html += `
+        <div class="delivery-warning">
+          <i class="fas fa-triangle-exclamation"></i>
+          <div>
+            <strong>Entrega a otra persona</strong>
+            <p>El repartidor entregará <b>únicamente</b> en la dirección registrada y a la persona indicada. Verifica los datos antes de continuar.</p>
+            <p>Asegúrate de que <b>la persona esté disponible</b> para recibir y pagar el pedido. Si no localizamos a nadie, el pedido podría cancelarse sin reembolso del envío.</p>
+          </div>
+        </div>
+
+        <div class="addr-block">
+          <label><i class="fas fa-user-check"></i> Nombre de quien recibe *</label>
+          <input type="text" id="recipientNameInput" class="form-control" placeholder="Nombre completo del receptor" value="${deliveryRecipientName || ''}">
+        </div>
+
+        <div class="addr-block">
+          <label><i class="fas fa-phone"></i> Teléfono de quien recibe *</label>
+          <input type="tel" id="recipientPhoneInput" class="form-control" placeholder="10 dígitos (para que el repartidor lo contacte)" inputmode="tel" value="${deliveryRecipientPhone || ''}">
+        </div>`;
+    }
+
+    html += `
       <button type="button" class="cart-add-more" id="cartUseLoc" style="margin-bottom:10px;">
         <i class="fas fa-location-arrow"></i> Usar mi ubicación
       </button>
@@ -2916,6 +3071,14 @@ function renderCartScreen() {
         <label><i class="fas fa-info-circle"></i> Detalles de ubicación *</label>
         <textarea id="cartLocationDetails" class="form-control" placeholder="Edificio, interior, color de fachada, referencias...">${document.getElementById('cartLocationDetails')?.value || ''}</textarea>
       </div>
+
+      ${deliveryFor === 'other' ? `
+        <div class="addr-verify">
+          <label class="addr-verify-check">
+            <input type="checkbox" id="addrVerified" ${addrVerified ? 'checked' : ''}>
+            <span>Confirmo que verifiqué la dirección y los datos de quien recibe. Entiendo que un error en los datos puede impedir la entrega.</span>
+          </label>
+        </div>` : ''}
 
       <div class="calc-status" id="cartCalcStatus">
         <i class="fas fa-sync-alt"></i> Calculando envío...
@@ -2967,6 +3130,11 @@ function renderCartScreen() {
   inner.querySelectorAll('[data-cart-for]').forEach(el => {
     el.addEventListener('click', () => {
       deliveryFor = el.dataset.cartFor;
+      if (deliveryFor === 'me') {
+        deliveryRecipientName = '';
+        deliveryRecipientPhone = '';
+        addrVerified = false;
+      }
       renderCartScreen();
     });
   });
@@ -2976,6 +3144,15 @@ function renderCartScreen() {
     document.getElementById('cartSearchAddr')?.addEventListener('click', () => searchAddress('cart'));
     document.getElementById('cartAddrInput')?.addEventListener('keypress', e => {
       if (e.key === 'Enter') { e.preventDefault(); searchAddress('cart'); }
+    });
+    document.getElementById('recipientNameInput')?.addEventListener('input', e => {
+      deliveryRecipientName = e.target.value;
+    });
+    document.getElementById('recipientPhoneInput')?.addEventListener('input', e => {
+      deliveryRecipientPhone = e.target.value;
+    });
+    document.getElementById('addrVerified')?.addEventListener('change', e => {
+      addrVerified = e.target.checked;
     });
   }
 
@@ -3033,6 +3210,19 @@ document.getElementById('stickyContinue').addEventListener('click', () => {
     const details = document.getElementById('cartLocationDetails')?.value?.trim();
     if (!details || details.length < 5) { showToast('Agrega detalles de ubicación', 'error'); return; }
     if (getBaseSubtotal() < shippingRates.minOrderForDelivery) { showToast(`Mínimo $${shippingRates.minOrderForDelivery}`, 'error'); return; }
+
+    // Validaciones de "otra persona"
+    if (deliveryFor === 'other') {
+      const rn = document.getElementById('recipientNameInput')?.value?.trim();
+      const rp = document.getElementById('recipientPhoneInput')?.value?.trim();
+      const av = document.getElementById('addrVerified')?.checked;
+      if (!rn || rn.length < 3) { showToast('Nombre de quien recibe', 'error'); return; }
+      if (!rp || rp.replace(/\D/g,'').length < 10) { showToast('Teléfono de quien recibe inválido', 'error'); return; }
+      if (!av) { showToast('Confirma que verificaste la dirección', 'error'); return; }
+      deliveryRecipientName = rn;
+      deliveryRecipientPhone = rp;
+      addrVerified = av;
+    }
   }
   prepareCheckout();
   navigateTo('checkout');
@@ -3160,8 +3350,16 @@ function updateFinalSummary() {
   }
 
   if (deliveryType === 'dine-in') {
-    html += `<div style="background:var(--black); color:var(--yellow); border-radius:var(--radius-md); padding:10px; margin-bottom:12px; text-align:center; font-family:var(--font-display); font-size:11px; text-transform:uppercase; letter-spacing:0.04em;">
+    html += `<div style="background:#0d0d0d; color:var(--yellow); border-radius:var(--radius-md); padding:10px; margin-bottom:12px; text-align:center; font-family:var(--font-display); font-size:11px; text-transform:uppercase; letter-spacing:0.04em;">
       <i class="fas fa-utensils"></i> Reservación de mesa
+    </div>`;
+  }
+
+  if (deliveryType === 'delivery' && deliveryFor === 'other' && deliveryRecipientName) {
+    html += `<div style="background:#0d0d0d; color:var(--yellow); border-radius:var(--radius-md); padding:10px; margin-bottom:12px; text-align:left; font-size:11px; font-weight:600; letter-spacing:0.02em; line-height:1.4;">
+      <div style="font-family:var(--font-display); font-size:11px; text-transform:uppercase; margin-bottom:4px;"><i class="fas fa-user-check"></i> Recibe otra persona</div>
+      <div><b>${deliveryRecipientName}</b></div>
+      <div>📞 ${deliveryRecipientPhone}</div>
     </div>`;
   }
 
@@ -3450,6 +3648,9 @@ function submitOrder() {
   msg += `*Modo:* ${packagingText}%0A`;
   if (deliveryType === 'delivery') {
     msg += `*Para:* ${deliveryFor === 'other' ? 'OTRA PERSONA' : 'Cliente'}%0A`;
+    if (deliveryFor === 'other' && deliveryRecipientName) {
+      msg += `*RECIBE:*%0A*Nombre receptor:* ${deliveryRecipientName}%0A*Teléfono receptor:* ${deliveryRecipientPhone}%0A`;
+    }
     msg += `*Dirección:* ${customerAddress}%0A`;
     msg += `*Detalles:* ${details}%0A`;
     if (deliveryCoords) msg += `*Mapa:* https://www.google.com/maps?q=${deliveryCoords.lat},${deliveryCoords.lng}%0A`;
@@ -3506,6 +3707,8 @@ function submitOrder() {
       tipo_entrega: deliveryType,
       modo_consumo: packagingText,
       pedido_para: deliveryFor,
+      receptor_nombre: (deliveryFor === 'other' ? deliveryRecipientName : ''),
+      receptor_telefono: (deliveryFor === 'other' ? deliveryRecipientPhone : ''),
       direccion: customerAddress,
       detalles_ubicacion: details,
       coordenadas: deliveryCoords ? `${deliveryCoords.lat.toFixed(6)},${deliveryCoords.lng.toFixed(6)}` : '',
@@ -3528,7 +3731,6 @@ function submitOrder() {
     };
     sendToMake(orderData);
 
-    // Guardar historial ANTES de limpiar el carrito
     saveOrderToHistory({
       id: orderData.pedido_id,
       date: new Date().toISOString(),
@@ -3554,6 +3756,10 @@ function submitOrder() {
     confirmTitle.textContent = '¡Reservación Confirmada!';
     confirmSchedule.classList.remove('active');
     confirmSub.textContent = 'Te esperamos. Recuerda ser puntual: pasado 15 minutos, tu mesa podría liberarse.';
+  } else if (deliveryType === 'delivery' && deliveryFor === 'other') {
+    confirmTitle.textContent = '¡Pedido Enviado!';
+    confirmSchedule.classList.remove('active');
+    confirmSub.textContent = `Tu pedido será entregado a ${deliveryRecipientName}. Asegúrate de que esté disponible en la dirección indicada.`;
   } else {
     confirmTitle.textContent = '¡Pedido Enviado!';
     confirmSchedule.classList.remove('active');
@@ -3572,6 +3778,9 @@ function submitOrder() {
   resetDeliveryLocation();
   deliveryType = 'pickup';
   deliveryFor = 'me';
+  deliveryRecipientName = '';
+  deliveryRecipientPhone = '';
+  addrVerified = false;
   selectPayment('card');
   refreshAll();
   navigateTo('menu');
