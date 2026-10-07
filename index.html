@@ -1245,6 +1245,126 @@ h1, h2, h3, h4 {
 .theme-switch.active::after { left: 27px; }
 
 /* ============================================
+   ORDER HISTORY
+   ============================================ */
+.history-list { display: flex; flex-direction: column; gap: 10px; }
+
+.history-empty {
+  text-align: center;
+  padding: 22px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.55;
+}
+
+.history-item {
+  background: var(--cream-warm);
+  border: 2px solid var(--black);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.history-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.history-item-id {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.history-item-total {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--red);
+  -webkit-text-stroke: 0.5px var(--black);
+  paint-order: stroke fill;
+}
+.history-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+.history-item-type {
+  background: var(--yellow);
+  color: #0d0d0d;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1.5px solid #0d0d0d;
+}
+.history-item-items {
+  font-size: 11.5px;
+  line-height: 1.45;
+  opacity: 0.85;
+}
+.history-clear {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 2px dashed var(--black);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  color: var(--black);
+  opacity: 0.7;
+}
+.history-clear:active { opacity: 1; }
+
+/* ============================================
+   RESERVATION NOTICE (Comer aquí)
+   ============================================ */
+.reservation-notice {
+  background: var(--yellow);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin: 0 0 12px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-offset-sm);
+}
+.reservation-notice i {
+  font-size: 22px;
+  color: #0d0d0d;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.reservation-notice strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #0d0d0d;
+  letter-spacing: 0.03em;
+}
+.reservation-notice p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #0d0d0d;
+  font-weight: 600;
+}
+.reservation-notice p b { font-weight: 800; }
+
+/* ============================================
    PRODUCT SHEET (bottom sheet)
    ============================================ */
 .sheet-overlay {
@@ -1656,7 +1776,9 @@ h1, h2, h3, h4 {
   margin-bottom: -1px;
 }
 
-/* Dark theme support */
+/* ============================================
+   DARK THEME
+   ============================================ */
 :root[data-theme="dark"] {
   --cream: #141414;
   --cream-warm: #1a1a1a;
@@ -1668,6 +1790,111 @@ h1, h2, h3, h4 {
 :root[data-theme="dark"] body { background: #0d0d0d; }
 :root[data-theme="dark"] .app-header { background: #000; }
 :root[data-theme="dark"] .menu-hero { background: #000; }
+
+/* Dark theme: superficies amarillas → tinta oscura fija */
+:root[data-theme="dark"] .hero-info-pill,
+:root[data-theme="dark"] .hero-info-pill.white,
+:root[data-theme="dark"] .schedule-banner .banner-icon,
+:root[data-theme="dark"] .row-add-btn,
+:root[data-theme="dark"] .mod-option.selected,
+:root[data-theme="dark"] .sheet-qty-btn,
+:root[data-theme="dark"] .payment-card.selected,
+:root[data-theme="dark"] .for-whom-pill.selected,
+:root[data-theme="dark"] .cart-pill.selected,
+:root[data-theme="dark"] .info-links a,
+:root[data-theme="dark"] .cart-summary-block,
+:root[data-theme="dark"] .final-summary,
+:root[data-theme="dark"] .confirm-check,
+:root[data-theme="dark"] .confirm-close,
+:root[data-theme="dark"] .confirm-schedule,
+:root[data-theme="dark"] .cart-line-qty button,
+:root[data-theme="dark"] .addr-input-row button,
+:root[data-theme="dark"] .change-pill,
+:root[data-theme="dark"] .cart-screen-empty .empty-icon,
+:root[data-theme="dark"] .reservation-notice,
+:root[data-theme="dark"] .toast.success,
+:root[data-theme="dark"] .history-item-type {
+  color: #0d0d0d;
+}
+
+:root[data-theme="dark"] .hero-info-pill,
+:root[data-theme="dark"] .hero-info-pill.white,
+:root[data-theme="dark"] .schedule-banner .banner-icon,
+:root[data-theme="dark"] .row-add-btn,
+:root[data-theme="dark"] .mod-option.selected,
+:root[data-theme="dark"] .sheet-qty-btn,
+:root[data-theme="dark"] .payment-card.selected,
+:root[data-theme="dark"] .for-whom-pill.selected,
+:root[data-theme="dark"] .cart-pill.selected,
+:root[data-theme="dark"] .info-links a,
+:root[data-theme="dark"] .cart-summary-block,
+:root[data-theme="dark"] .final-summary,
+:root[data-theme="dark"] .confirm-check,
+:root[data-theme="dark"] .confirm-close,
+:root[data-theme="dark"] .confirm-schedule,
+:root[data-theme="dark"] .cart-line-qty button,
+:root[data-theme="dark"] .addr-input-row button,
+:root[data-theme="dark"] .change-pill,
+:root[data-theme="dark"] .theme-switch,
+:root[data-theme="dark"] .reservation-notice,
+:root[data-theme="dark"] .cart-screen-empty .empty-icon,
+:root[data-theme="dark"] .toast.success,
+:root[data-theme="dark"] .history-item-type {
+  border-color: #0d0d0d;
+}
+
+:root[data-theme="dark"] .row-add-btn,
+:root[data-theme="dark"] .cart-summary-block,
+:root[data-theme="dark"] .final-summary,
+:root[data-theme="dark"] .info-links a,
+:root[data-theme="dark"] .confirm-check,
+:root[data-theme="dark"] .confirm-close,
+:root[data-theme="dark"] .reservation-notice,
+:root[data-theme="dark"] .cart-screen-empty .empty-icon {
+  box-shadow: 3px 3px 0 #0d0d0d;
+}
+
+:root[data-theme="dark"] .theme-switch::after,
+:root[data-theme="dark"] .mod-toggle::after {
+  background: #0d0d0d;
+}
+
+/* Cat pills activas + sticky continue: fondo negro fijo + texto amarillo */
+:root[data-theme="dark"] .cat-pill.active,
+:root[data-theme="dark"] .sticky-continue {
+  background: #0d0d0d;
+  color: var(--yellow);
+  border-color: #0d0d0d;
+}
+
+/* Toast */
+:root[data-theme="dark"] .toast {
+  background: #000;
+  color: var(--yellow);
+  border-color: var(--yellow);
+}
+:root[data-theme="dark"] .toast.success {
+  background: var(--yellow);
+  color: #0d0d0d;
+  border-color: #0d0d0d;
+}
+:root[data-theme="dark"] .toast.error {
+  background: var(--red);
+  color: #fff;
+  border-color: #0d0d0d;
+}
+
+/* Números de total: mantener tinta oscura sobre amarillo */
+:root[data-theme="dark"] .summary-row.total span:last-child,
+:root[data-theme="dark"] .final-summary .fs-total span:last-child,
+:root[data-theme="dark"] .cart-line-price,
+:root[data-theme="dark"] .product-row-price,
+:root[data-theme="dark"] .sheet-price,
+:root[data-theme="dark"] .history-item-total,
+:root[data-theme="dark"] .mod-option-price,
+:root[data-theme="dark"] .mod-extra-price {
+  -webkit-text-stroke-color: #0d0d0d;
+}
 
 /* Responsive */
 @media (min-width: 768px) {
@@ -1844,7 +2071,7 @@ h1, h2, h3, h4 {
           <div class="info-row"><span>Máx. distancia</span><span>15 km</span></div>
           <div class="info-row"><span>Pedido mín. envío</span><span>$100.00</span></div>
           <div class="info-row"><span>Para llevar</span><span>+$10 c/u</span></div>
-          <div class="info-row"><span>Comer aquí</span><span>-$5 c/u</span></div>
+          <div class="info-row"><span>Comer aquí</span><span>Reservación</span></div>
         </div>
 
         <div class="info-card-item">
@@ -1857,6 +2084,11 @@ h1, h2, h3, h4 {
             <a href="https://www.x.com/PipirisFries" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
             <a href="https://pipirisfries.com/menu" target="_blank" rel="noopener"><i class="fas fa-globe"></i></a>
           </div>
+        </div>
+
+        <div class="info-card-item">
+          <h4><i class="fas fa-receipt"></i> Historial de pedidos</h4>
+          <div class="history-list" id="orderHistoryList"></div>
         </div>
 
         <div class="info-card-item">
@@ -1962,8 +2194,8 @@ const MAX_SCHEDULE_DATES = 8;
 const SCHEDULE_SCAN_DAYS = 28;
 
 const shippingRates = { baseRate: 10.00, perKmRate: 10.00, maxDistance: 15, minOrderForDelivery: 100.00 };
-const PACKAGING_TAKEAWAY = 10;
-const PACKAGING_DINEIN  = -5;
+const PACKAGING_FEE = 10;      // +$10 por artículo (para llevar y a domicilio)
+const PACKAGING_DINEIN = 0;    // Comer aquí: reservación, sin empaque
 
 const DAY_HOURS = {
   0: { open: 15*60, close: 20*60 + 30 },
@@ -2093,8 +2325,7 @@ let deliveryCoords = null;
 let deliveryZone = "";
 let paymentMethod = 'card';
 let deliveryFor = 'me';
-let deliveryType = 'pickup';
-let packagingMode = 'takeaway';
+let deliveryType = 'pickup'; // 'pickup' | 'delivery' | 'dine-in'
 let isScheduledOrder = false;
 let scheduleState = { isOpen: false, isOpenDay: false, todayHours: null, dow: 1 };
 
@@ -2124,7 +2355,6 @@ function navigateTo(screenName) {
   });
 
   if (targetIdx > currentIdx) {
-    // Going forward — current becomes prev
     document.querySelector(`.screen[data-screen="${currentScreen}"]`)?.classList.add('prev');
   }
 
@@ -2135,6 +2365,8 @@ function navigateTo(screenName) {
   updateHeader();
   updateBottomNav();
   updateStickyBars();
+
+  if (screenName === 'info') renderOrderHistory();
 }
 
 function goBack() {
@@ -2224,10 +2456,8 @@ document.querySelectorAll('.cat-pill').forEach(btn => {
    HELPERS
    ============================================ */
 function getPackagingModifierPerUnit() {
-  if (deliveryType === 'delivery') return 0;
-  if (packagingMode === 'takeaway') return PACKAGING_TAKEAWAY;
-  if (packagingMode === 'dine-in') return PACKAGING_DINEIN;
-  return 0;
+  if (deliveryType === 'dine-in') return PACKAGING_DINEIN; // 0
+  return PACKAGING_FEE; // +$10 para pickup y delivery
 }
 function getItemEffectiveUnitPrice(item) { return item.price + getPackagingModifierPerUnit(); }
 function getPackagingTotal() {
@@ -2619,33 +2849,33 @@ function renderCartScreen() {
 
   html += `<button class="cart-add-more" onclick="navigateTo('menu')"><i class="fas fa-plus"></i> Agregar más productos</button>`;
 
-  // Delivery type
+  // Delivery type: 3 opciones
   html += `
-    <span class="cart-section-label">Tipo de entrega</span>
+    <span class="cart-section-label">Tipo de pedido</span>
     <div class="cart-pill-group">
       <label class="cart-pill ${deliveryType === 'pickup' ? 'selected' : ''}" data-cart-delivery="pickup">
         <input type="radio" name="dType" value="pickup" ${deliveryType === 'pickup' ? 'checked' : ''}>
-        <i class="fas fa-store"></i> Recoger
+        <i class="fas fa-bag-shopping"></i> Para llevar (+$10 c/u)
       </label>
       <label class="cart-pill ${deliveryType === 'delivery' ? 'selected alt' : ''}" data-cart-delivery="delivery">
         <input type="radio" name="dType" value="delivery" ${deliveryType === 'delivery' ? 'checked' : ''}>
         <i class="fas fa-motorcycle"></i> A domicilio
       </label>
+      <label class="cart-pill ${deliveryType === 'dine-in' ? 'selected' : ''}" data-cart-delivery="dine-in">
+        <input type="radio" name="dType" value="dine-in" ${deliveryType === 'dine-in' ? 'checked' : ''}>
+        <i class="fas fa-utensils"></i> Comer aquí
+      </label>
     </div>`;
 
-  // Packaging mode (only if pickup)
-  if (deliveryType === 'pickup') {
+  // Aviso de reservación si es dine-in
+  if (deliveryType === 'dine-in') {
     html += `
-      <span class="cart-section-label">Modo</span>
-      <div class="cart-pill-group">
-        <label class="cart-pill ${packagingMode === 'takeaway' ? 'selected' : ''}" data-cart-pack="takeaway">
-          <input type="radio" name="pMode" value="takeaway" ${packagingMode === 'takeaway' ? 'checked' : ''}>
-          <i class="fas fa-bag-shopping"></i> Llevar (+$10)
-        </label>
-        <label class="cart-pill ${packagingMode === 'dine-in' ? 'selected alt' : ''}" data-cart-pack="dine-in">
-          <input type="radio" name="pMode" value="dine-in" ${packagingMode === 'dine-in' ? 'checked' : ''}>
-          <i class="fas fa-utensils"></i> Comer aquí (-$5)
-        </label>
+      <div class="reservation-notice">
+        <i class="fas fa-calendar-check"></i>
+        <div>
+          <strong>Reservación de mesa</strong>
+          <p>Al confirmar, apartamos tu mesa. <b>Sé puntual</b>: pasado 15 minutos de la hora acordada, tu lugar podría liberarse sin previo aviso.</p>
+        </div>
       </div>`;
   }
 
@@ -2706,8 +2936,8 @@ function renderCartScreen() {
   html += `
     <div class="cart-summary-block">
       <div class="summary-row"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
-      ${packagingTotal !== 0 && deliveryType === 'pickup' ? `
-        <div class="summary-row"><span>${packagingMode === 'takeaway' ? 'Empaque' : 'Comer aquí'}</span><span>$${packagingTotal.toFixed(2)}</span></div>` : ''}
+      ${packagingTotal !== 0 ? `
+        <div class="summary-row"><span>Empaque (+$10 c/u)</span><span>$${packagingTotal.toFixed(2)}</span></div>` : ''}
       ${deliveryType === 'delivery' && currentShippingCost > 0 ? `
         <div class="summary-row"><span>Envío</span><span>$${currentShippingCost.toFixed(2)}</span></div>` : ''}
       <div class="summary-row total"><span>Total</span><span>$${total.toFixed(2)}</span></div>
@@ -2728,15 +2958,10 @@ function renderCartScreen() {
   inner.querySelectorAll('[data-cart-delivery]').forEach(el => {
     el.addEventListener('click', () => {
       deliveryType = el.dataset.cartDelivery;
-      if (deliveryType === 'pickup') resetDeliveryLocation();
+      if (deliveryType !== 'delivery') resetDeliveryLocation();
       renderCartScreen();
       updateStickyBars();
-    });
-  });
-  inner.querySelectorAll('[data-cart-pack]').forEach(el => {
-    el.addEventListener('click', () => {
-      packagingMode = el.dataset.cartPack;
-      renderCartScreen();
+      updateCartBadges();
     });
   });
   inner.querySelectorAll('[data-cart-for]').forEach(el => {
@@ -2934,6 +3159,12 @@ function updateFinalSummary() {
     }
   }
 
+  if (deliveryType === 'dine-in') {
+    html += `<div style="background:var(--black); color:var(--yellow); border-radius:var(--radius-md); padding:10px; margin-bottom:12px; text-align:center; font-family:var(--font-display); font-size:11px; text-transform:uppercase; letter-spacing:0.04em;">
+      <i class="fas fa-utensils"></i> Reservación de mesa
+    </div>`;
+  }
+
   cart.forEach(item => {
     let mods = [];
     if (item.selection) mods.push(item.selection.name);
@@ -2945,8 +3176,8 @@ function updateFinalSummary() {
     </div>`;
   });
 
-  if (packagingTotal !== 0 && deliveryType === 'pickup') {
-    html += `<div class="fs-line muted"><span>${packagingMode === 'takeaway' ? 'Empaque' : 'Comer aquí'}</span><span>$${packagingTotal.toFixed(2)}</span></div>`;
+  if (packagingTotal !== 0) {
+    html += `<div class="fs-line muted"><span>Empaque (+$10 c/u)</span><span>$${packagingTotal.toFixed(2)}</span></div>`;
   }
   if (deliveryType === 'delivery' && currentShippingCost > 0) {
     html += `<div class="fs-line muted"><span>Envío</span><span>$${currentShippingCost.toFixed(2)}</span></div>`;
@@ -3103,6 +3334,58 @@ function calcChange() {
 }
 
 /* ============================================
+   ORDER HISTORY
+   ============================================ */
+function saveOrderToHistory(order) {
+  try {
+    let history = JSON.parse(localStorage.getItem('pipirisHistory')) || [];
+    history.unshift(order);
+    if (history.length > 20) history = history.slice(0, 20);
+    localStorage.setItem('pipirisHistory', JSON.stringify(history));
+  } catch (e) { console.warn('History save error', e); }
+}
+
+function renderOrderHistory() {
+  const list = document.getElementById('orderHistoryList');
+  if (!list) return;
+  let history = [];
+  try { history = JSON.parse(localStorage.getItem('pipirisHistory')) || []; } catch (e) {}
+
+  if (history.length === 0) {
+    list.innerHTML = '<div class="history-empty">Aún no tienes pedidos registrados 🍟</div>';
+    return;
+  }
+
+  const typeLabel = { delivery: 'Envío', pickup: 'Para llevar', 'dine-in': 'Reservación' };
+
+  list.innerHTML = history.map(order => {
+    const d = new Date(order.date);
+    const dateStr = d.toLocaleDateString('es-MX', { day: 'numeric', month: 'short' });
+    const timeStr = d.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' });
+    const itemsTxt = (order.items || []).map(i => `${i.qty}× ${i.name}`).join(', ');
+    return `
+      <div class="history-item">
+        <div class="history-item-header">
+          <span class="history-item-id">${order.id}</span>
+          <span class="history-item-total">$${Number(order.total).toFixed(2)}</span>
+        </div>
+        <div class="history-item-meta">
+          <i class="fas fa-calendar-day"></i> ${dateStr} · ${timeStr}
+          <span class="history-item-type">${typeLabel[order.type] || order.type}</span>
+        </div>
+        <div class="history-item-items">${itemsTxt}</div>
+      </div>`;
+  }).join('') + `<button class="history-clear" id="historyClearBtn"><i class="fas fa-trash"></i> Borrar historial</button>`;
+
+  document.getElementById('historyClearBtn')?.addEventListener('click', () => {
+    if (confirm('¿Borrar todo el historial de pedidos?')) {
+      localStorage.removeItem('pipirisHistory');
+      renderOrderHistory();
+    }
+  });
+}
+
+/* ============================================
    SUBMIT ORDER
    ============================================ */
 document.getElementById('submitOrderBtn').addEventListener('click', submitOrder);
@@ -3138,9 +3421,13 @@ function submitOrder() {
   const subtotal = getCartSubtotal();
   const packagingTotal = getPackagingTotal();
   const total = subtotal + currentShippingCost;
-  const packagingText = deliveryType === 'pickup'
-    ? (packagingMode === 'takeaway' ? `Para llevar (+$${PACKAGING_TAKEAWAY} c/u)` : `Comer aquí (-$${Math.abs(PACKAGING_DINEIN)} c/u)`)
-    : 'Envío a domicilio';
+
+  const packagingText = deliveryType === 'dine-in' ? 'Comer aquí (Reservación)' :
+    (deliveryType === 'delivery' ? 'Envío a domicilio' : 'Para llevar');
+
+  const typeLabel = deliveryType === 'dine-in' ? 'RESERVACIÓN' :
+    (deliveryType === 'delivery' ? 'ENVÍO A DOMICILIO' : 'PARA LLEVAR');
+
   const paymentText = paymentMethod === 'cash' ? 'Efectivo' : 'Tarjeta (Terminal)';
 
   let scheduledDateLabel = '', scheduledTimeLabel = '';
@@ -3159,7 +3446,7 @@ function submitOrder() {
     msg += `*NUEVO PEDIDO — Pipiris Fries*%0A%0A`;
   }
   msg += `*Cliente:* ${name}%0A*Teléfono:* ${phone}%0A`;
-  msg += `*Tipo:* ${deliveryType === 'delivery' ? 'Envío a domicilio' : 'Recoger en local'}%0A`;
+  msg += `*Tipo:* ${typeLabel}%0A`;
   msg += `*Modo:* ${packagingText}%0A`;
   if (deliveryType === 'delivery') {
     msg += `*Para:* ${deliveryFor === 'other' ? 'OTRA PERSONA' : 'Cliente'}%0A`;
@@ -3167,6 +3454,9 @@ function submitOrder() {
     msg += `*Detalles:* ${details}%0A`;
     if (deliveryCoords) msg += `*Mapa:* https://www.google.com/maps?q=${deliveryCoords.lat},${deliveryCoords.lng}%0A`;
     msg += `*Distancia:* ${deliveryDistance.toFixed(1)} km%0A`;
+  }
+  if (deliveryType === 'dine-in') {
+    msg += `⚠️ *RESERVACIÓN:* El cliente se compromete a llegar puntual. Tolerancia máxima: 15 minutos.%0A`;
   }
   msg += `*Pago:* ${paymentText}%0A`;
   if (paymentMethod === 'cash') {
@@ -3184,14 +3474,14 @@ function submitOrder() {
     if (mods.length) msg += `%0A   _${mods.join(', ')}_`;
     msg += `%0A`;
   });
-  if (packagingTotal !== 0 && deliveryType === 'pickup') {
-    msg += `%0A*${packagingMode === 'takeaway' ? 'Empaque' : 'Comer aquí'}:* $${packagingTotal.toFixed(2)}%0A`;
+  if (packagingTotal !== 0) {
+    msg += `%0A*Empaque (+$10 c/u):* $${packagingTotal.toFixed(2)}%0A`;
   }
   if (deliveryType === 'delivery') msg += `*Envío:* $${currentShippingCost.toFixed(2)}%0A`;
   msg += `*TOTAL:* $${total.toFixed(2)}%0A%0A`;
   msg += `_Enviado: ${new Date().toLocaleString('es-MX')}_`;
 
-  // Make webhook
+  // Make webhook + historial
   try {
     const pedidoDetalle = cart.map(item => {
       let mods = [];
@@ -3237,6 +3527,15 @@ function submitOrder() {
       }))
     };
     sendToMake(orderData);
+
+    // Guardar historial ANTES de limpiar el carrito
+    saveOrderToHistory({
+      id: orderData.pedido_id,
+      date: new Date().toISOString(),
+      total: total,
+      type: deliveryType,
+      items: cart.map(i => ({ qty: i.quantity, name: i.name }))
+    });
   } catch (err) { console.warn('Make error:', err); }
 
   // Open WhatsApp
@@ -3244,14 +3543,21 @@ function submitOrder() {
 
   // Show confirmation
   const confirmTitle = document.getElementById('confirmTitle');
+  const confirmSub = document.getElementById('confirmSub');
   const confirmSchedule = document.getElementById('confirmSchedule');
   if (isScheduledOrder) {
     confirmTitle.textContent = '¡Pedido Programado!';
     confirmSchedule.textContent = `${scheduledDateLabel} · ${scheduledTimeLabel}`;
     confirmSchedule.classList.add('active');
+    confirmSub.textContent = 'Tu pedido ha sido enviado por WhatsApp. Te contactaremos para confirmar.';
+  } else if (deliveryType === 'dine-in') {
+    confirmTitle.textContent = '¡Reservación Confirmada!';
+    confirmSchedule.classList.remove('active');
+    confirmSub.textContent = 'Te esperamos. Recuerda ser puntual: pasado 15 minutos, tu mesa podría liberarse.';
   } else {
     confirmTitle.textContent = '¡Pedido Enviado!';
     confirmSchedule.classList.remove('active');
+    confirmSub.textContent = 'Tu pedido ha sido enviado por WhatsApp. Te contactaremos pronto para confirmar.';
   }
   document.getElementById('confirmOverlay').classList.add('active');
 
@@ -3265,7 +3571,6 @@ function submitOrder() {
   document.getElementById('cashAmount').value = '';
   resetDeliveryLocation();
   deliveryType = 'pickup';
-  packagingMode = 'takeaway';
   deliveryFor = 'me';
   selectPayment('card');
   refreshAll();
@@ -3331,6 +3636,8 @@ function init() {
   renderProducts();
   renderCartScreen();
   updateCartBadges();
+  updateOrderHistory?.();
+  renderOrderHistory();
   applyScheduleState();
   updateHeader();
   updateBottomNav();
